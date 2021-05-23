@@ -1,9 +1,21 @@
+:root {
+  --app-spacer: 20px;
+
+  --logo-color: #d8cd41;
+  --tagline-color: #b99d78;
+  --perforated-line: #545454 dotted 1px;
+}
+
 html,
-body {
+body,
+#__next {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 18px;
+  background-color: rgba(26, 24, 24, 0.87);
+  height: 100%;
+  color: rgb(233, 233, 233);
 }
 
 a {
@@ -13,4 +25,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+#__next {
+  max-width: 80%;
+  margin: 0 auto;
 }

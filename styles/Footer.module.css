@@ -1,0 +1,5 @@
+.footer {
+  text-align: center;
+  padding: calc(var(--app-spacer) / 2) 0;
+  border-top: var(--perforated-line);
+}
