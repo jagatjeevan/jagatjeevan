@@ -1,7 +1,0 @@
-.layout {
-  display: grid;
-  height: 100%;
-  grid-template-rows: auto 1fr auto;
-  grid-gap: calc(var(--app-spacer) / 2);
-}
-
