@@ -1,5 +1,5 @@
 .header {
-  padding: calc(var(--app-spacer) / 2) 0;
+  padding: var(--app-spacer);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,4 +27,26 @@
 .tagline {
   font-size: 14px;
   color: var(--tagline-color);
+}
+
+a {
+  .logoName &,
+  .tagline & {
+    color: inherit;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.menuItems {
+  li {
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    border: var(--perforated-line);
+  }
+}
+
+.activeLink {
+  background: lighten($color: rgba(26, 24, 24, 0.87), $amount: 10);
 }

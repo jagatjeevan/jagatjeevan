@@ -35,9 +35,9 @@ const GetTalent = () => {
 
 export default function Home() {
   return (
-    <article className={styles.layout}>
+    <article className="layout">
       <Header />
-      <section className={styles.introContainer}>
+      <section className={`${styles.introContainer} app-container`}>
         <div className={styles.intro}>
           <p>Hey there!</p>
           <p>I am Jagat Jeevan.</p>

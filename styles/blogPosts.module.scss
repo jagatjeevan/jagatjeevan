@@ -1,0 +1,41 @@
+@import "./variables";
+
+.blogsContainer {
+  display: grid;
+  grid-gap: calc(var(--app-spacer) / 2);
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-auto-flow: dense;
+}
+
+.blogPost {
+  padding: var(--app-spacer);
+  border-radius: calc(var(--border-radius) * 2);
+  background-color: darken($page-background-color, 10);
+  p {
+    margin: 0;
+  }
+  header {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}
+
+.summary {
+  margin-top: 0;
+}
+
+.dateAndReadTime {
+  margin: calc(var(--app-spacer) / 5) 0;
+  font-size: 0.8em;
+  color: #6b6b6b;
+}
+
+.createdDate {
+  position: relative;
+  margin-right: 19px;
+  &::after {
+    position: absolute;
+    content: ":";
+    right: -10px;
+  }
+}
