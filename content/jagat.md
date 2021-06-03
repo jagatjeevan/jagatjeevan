@@ -1,7 +1,8 @@
 ---
-title: "Build an awesome Next.js blog"
-date: "2020-10-01"
-description: "This is an starting of the blog posts"
+title: 'Build an awesome Next.js blog'
+date: '2020-10-01'
+description: 'This is an starting of the blog posts'
+tags: ['nextjs', 'react']
 ---
 
 # We're building an awesome Next.js blog using Markdown.

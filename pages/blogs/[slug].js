@@ -1,14 +1,17 @@
-import matter from 'gray-matter';
+import path from 'path';
+import { promises as fsp } from 'fs';
 
 import React from 'react';
 import Head from 'next/head';
+import matter from 'gray-matter';
 
 import Header from '../../src/components/Header';
 import Footer from '../../src/components/Footer';
+import ReactMarkdown from 'react-markdown';
 
 function Blog(props) {
   const { content, data } = props;
-  console.log(data);
+
   return (
     <>
       <Head>
@@ -24,7 +27,7 @@ function Blog(props) {
           <header>
             {data.title} : {data.date}
           </header>
-          <section>{content}</section>
+          <ReactMarkdown>{content}</ReactMarkdown>
         </section>
         <Footer />
       </article>
@@ -32,17 +35,28 @@ function Blog(props) {
   );
 }
 
-Blog.getInitialProps = async (context) => {
-  const { slug } = context.query;
+export async function getStaticProps(context) {
+  const { slug } = context.params;
+  const filePath = path.join(process.cwd(), 'content', `${slug}.md`);
+  const fileContent = await fsp.readFile(filePath, 'utf-8');
+  const { data, content } = matter(fileContent);
+  return {
+    props: {
+      data,
+      content,
+    },
+  };
+}
 
-  // Import our .md file using the `slug` from the URL
-  const content = await import(`../../content/${slug}.md`);
-
-  // Parse .md data through `matter`
-  const data = matter(content.default);
-
-  // Pass data to our component props
-  return { ...data };
-};
+export async function getStaticPaths() {
+  const contentDirectory = path.join(process.cwd(), 'content');
+  const filenames = await fsp.readdir(contentDirectory);
+  const paths = filenames.map((filename) => ({ params: { slug: filename.replace('.md', '') } }));
+  console.log(paths);
+  return {
+    paths,
+    fallback: false,
+  };
+}
 
 export default Blog;
