@@ -9,6 +9,8 @@ import Header from '../../src/components/Header';
 import Footer from '../../src/components/Footer';
 import ReactMarkdown from 'react-markdown';
 
+import styles from '../../styles/blogPost.module.scss';
+
 function Blog(props) {
   const { content, data } = props;
 
@@ -24,8 +26,14 @@ function Blog(props) {
       <article className="layout">
         <Header />
         <section className="app-container">
-          <header>
-            {data.title} : {data.date}
+          <header className={styles.headerContainer}>
+            <h1 className={styles.blogHeader}>{data.title}</h1>
+            <div className={styles.createdOn}>Created on : {data.date}</div>
+            <div className={styles.tagContainer}>
+              {data.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
           </header>
           <ReactMarkdown>{content}</ReactMarkdown>
         </section>
@@ -52,7 +60,6 @@ export async function getStaticPaths() {
   const contentDirectory = path.join(process.cwd(), 'content');
   const filenames = await fsp.readdir(contentDirectory);
   const paths = filenames.map((filename) => ({ params: { slug: filename.replace('.md', '') } }));
-  console.log(paths);
   return {
     paths,
     fallback: false,

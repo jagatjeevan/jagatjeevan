@@ -15,6 +15,7 @@ function BlogSummary(props) {
   const { data, content } = matter(blog);
   const { title, date, description } = data;
   const filenameWithoutExt = filename.split('.')[0];
+
   return (
     <>
       <Head>
@@ -27,7 +28,7 @@ function BlogSummary(props) {
         </header>
         <div className={styles.dateAndReadTime}>
           <time dateTime={date} value={date} className={styles.createdDate}>
-            {date}
+            {new Date(date).toDateString()}
           </time>
           {getReadTime(content).text}
         </div>
@@ -43,7 +44,8 @@ function Blogs(props) {
     <article className="layout">
       <Header />
       <section className="app-container">
-        <p className={styles.summary}>Total number of posts : {blogs.length}</p>
+        <h3>Hang on tight. Blogs are on the way to be released</h3>
+        {/* <p className={styles.summary}>Total number of posts : {blogs.length}</p>
         <div className={styles.blogsContainer}>
           {blogs.map((blog, index) => {
             return (
@@ -54,7 +56,7 @@ function Blogs(props) {
               />
             );
           })}
-        </div>
+        </div> */}
       </section>
       <Footer />
     </article>

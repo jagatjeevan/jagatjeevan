@@ -1,15 +1,20 @@
-@import "./variables";
-@import "./layout";
+@import './variables';
+@import './layout';
 
 :root {
+  // Spacer
   --app-spacer: 20px;
   --border-radius: 5px;
+
+  // Colors
   --page-background-color: #{$page-background-color};
   --page-text-color: rgb(233, 233, 233);
   --logo-color: #d8cd41;
+  --blog-title-color: orange;
   --tagline-color: #b99d78;
   --talent-color: #00ffff;
 
+  // Border
   --perforated-line: #545454 dotted 1px;
 }
 
@@ -18,7 +23,7 @@ body,
 #__next {
   padding: 0;
   margin: 0;
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   font-size: 18px;
   height: 100%;
 }

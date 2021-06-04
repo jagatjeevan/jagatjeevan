@@ -1,5 +1,38 @@
 .blogHeader {
   font-size: 1.5em;
-  color: orange;
+  color: var(--blog-title-color);
   font-weight: bold;
+  margin: 0;
+}
+
+.headerContainer {
+  display: grid;
+  grid-gap: 10px;
+  @media screen and (min-width: 600px) {
+    grid-template-columns: 1fr 250px;
+    grid-gap: 20px;
+  }
+}
+
+.tagContainer {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  font-size: 0.8em;
+
+  span {
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    border: var(--perforated-line);
+    margin-right: 10px;
+  }
+}
+
+.createdOn {
+  @media screen and (min-width: 600px) {
+    justify-self: end;
+  }
+}
+
+.appContainer p {
+  margin: 5px 0;
 }
