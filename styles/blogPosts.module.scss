@@ -1,4 +1,4 @@
-@import "./variables";
+@import './variables';
 
 .blogsContainer {
   display: grid;
@@ -17,6 +17,7 @@
   header {
     font-size: 1.2em;
     font-weight: bold;
+    font-family: 'Open Sans Condensed', sans-serif;
   }
 }
 
@@ -27,7 +28,7 @@
 .dateAndReadTime {
   margin: calc(var(--app-spacer) / 5) 0;
   font-size: 0.8em;
-  color: #6b6b6b;
+  color: #a5a5a5;
 }
 
 .createdDate {
@@ -35,7 +36,7 @@
   margin-right: 19px;
   &::after {
     position: absolute;
-    content: ":";
+    content: ':';
     right: -10px;
   }
 }

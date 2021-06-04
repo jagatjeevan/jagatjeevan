@@ -27,10 +27,11 @@ function BlogSummary(props) {
           <Link href={`/blogs/${filenameWithoutExt}`}>{title}</Link>
         </header>
         <div className={styles.dateAndReadTime}>
+          Created on{' : '}
           <time dateTime={date} value={date} className={styles.createdDate}>
             {new Date(date).toDateString()}
           </time>
-          {getReadTime(content).text}
+          Read time around : {getReadTime(content).text}
         </div>
         <p>{description}</p>
       </div>
@@ -44,8 +45,7 @@ function Blogs(props) {
     <article className="layout">
       <Header />
       <section className="app-container">
-        <h3>Hang on tight. Blogs are on the way to be released</h3>
-        {/* <p className={styles.summary}>Total number of posts : {blogs.length}</p>
+        <p className={styles.summary}>Total number of posts : {blogs.length}</p>
         <div className={styles.blogsContainer}>
           {blogs.map((blog, index) => {
             return (
@@ -56,7 +56,7 @@ function Blogs(props) {
               />
             );
           })}
-        </div> */}
+        </div>
       </section>
       <Footer />
     </article>

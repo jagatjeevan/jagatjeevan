@@ -3,11 +3,13 @@
   color: var(--blog-title-color);
   font-weight: bold;
   margin: 0;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .headerContainer {
   display: grid;
   grid-gap: 10px;
+  font-family: 'Open Sans Condensed', sans-serif;
   @media screen and (min-width: 600px) {
     grid-template-columns: 1fr 250px;
     grid-gap: 20px;
@@ -30,6 +32,7 @@
 .createdOn {
   @media screen and (min-width: 600px) {
     justify-self: end;
+    align-self: center;
   }
 }
 

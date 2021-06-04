@@ -23,7 +23,7 @@ body,
 #__next {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   font-size: 18px;
   height: 100%;
 }
@@ -48,4 +48,23 @@ a {
 #__next {
   max-width: 80%;
   margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin: 50px 0 10px;
+}
+
+pre {
+  background: lighten($color: $page-background-color, $amount: 10);
+  border: darken($page-background-color, 10%) solid 1px;
+  padding: var(--app-spacer);
+  border-radius: calc(var(--border-radius) * 2);
 }
