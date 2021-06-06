@@ -67,4 +67,32 @@ pre {
   border: darken($page-background-color, 10%) solid 1px;
   padding: var(--app-spacer);
   border-radius: calc(var(--border-radius) * 2);
+  max-width: 100%;
+  overflow: auto;
+}
+
+@keyframes beatHeart {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hearts {
+  color: #ef2b2b;
+  animation-name: beatHeart;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  display: inline-block;
 }

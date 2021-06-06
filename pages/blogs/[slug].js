@@ -28,7 +28,9 @@ function Blog(props) {
         <section className="app-container">
           <header className={styles.headerContainer}>
             <h1 className={styles.blogHeader}>{data.title}</h1>
-            <div className={styles.createdOn}>Created on : {data.date}</div>
+            <div className={styles.createdOn}>
+              Created on : {new Date(data.date).toDateString()}
+            </div>
             <div className={styles.tagContainer}>
               {data.tags.map((tag) => (
                 <span key={tag}>{tag}</span>

@@ -6,4 +6,6 @@
 
 .app-container {
   padding: var(--app-spacer);
+  max-width: 100%;
+  overflow-x: hidden;
 }
