@@ -1,5 +1,7 @@
 @import './variables';
 @import './layout';
+@import './scrollbar';
+@import './selection';
 
 :root {
   // Spacer
@@ -10,6 +12,7 @@
   --page-background-color: #{$page-background-color};
   --page-text-color: rgb(233, 233, 233);
   --logo-color: #d8cd41;
+  --link-color: rgb(51, 149, 240);
   --blog-title-color: orange;
   --tagline-color: #b99d78;
   --talent-color: #00ffff;
@@ -34,7 +37,7 @@ body {
 }
 
 a {
-  color: rgb(51, 149, 240);
+  color: var(--link-color);
   text-decoration: none;
   &:hover {
     text-decoration: underline;
