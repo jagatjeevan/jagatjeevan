@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from "react";
-import Footer from "../src/components/Footer";
-import Header from "../src/components/Header";
+import React, { useEffect, useState } from 'react';
+import Footer from '../src/components/Footer';
+import Header from '../src/components/Header';
 
-import styles from "../styles/Home.module.scss";
+import styles from '../styles/Home.module.scss';
 
 const GetTalent = () => {
   const [index, setIndex] = useState(0);
 
-  const talent = [
-    "Frontend Development",
-    "Responsive sites",
-    "Progressive Web Apps",
-    "Mailer",
-  ];
+  const talent = ['Frontend Development', 'Responsive sites', 'Progressive Web Apps', 'Mailer'];
 
   const getTalentText = () => {
     return <span className={styles.talent}>{talent[index]}</span>;
@@ -43,6 +38,13 @@ export default function Home() {
           <p>I am Jagat Jeevan.</p>
           <p>
             And I do <GetTalent />
+          </p>
+          <p>
+            I am currently working @ThoughtWorks, Bengaluru.
+            {/* You could see a summary of things done{' '}
+            <a href="https://jagatjeevan.github.io/portfolio" target="_blank">
+              here
+            </a> */}
           </p>
         </div>
         <img src="/profile.jpeg" className={styles.rounded} />

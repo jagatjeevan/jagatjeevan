@@ -1,13 +1,13 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import styles from "../../styles/Header.module.scss";
+import styles from '../../styles/Header.module.scss';
 
 function Header() {
   const router = useRouter();
 
   const getActiveLink = (name) => {
-    return router.pathname === name ? `${styles.activeLink} link` : "link";
+    return router.pathname === name ? `${styles.activeLink} link` : 'link';
   };
 
   return (
@@ -22,7 +22,7 @@ function Header() {
       </div>
       <nav>
         <ul className={styles.menuItems}>
-          <li className={getActiveLink("/blogs")}>
+          <li className={getActiveLink('/blogs')}>
             <Link href="/blogs">Blogs</Link>
           </li>
         </ul>

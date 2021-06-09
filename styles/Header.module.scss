@@ -41,10 +41,12 @@ a {
 }
 
 .menuItems {
+  display: flex;
   li {
     padding: 5px 10px;
     border-radius: var(--border-radius);
     border: var(--perforated-line);
+    margin-left: var(--app-spacer);
   }
 }
 
