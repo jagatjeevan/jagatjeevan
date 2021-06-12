@@ -34,9 +34,4 @@
 .createdDate {
   position: relative;
   margin-right: 19px;
-  &::after {
-    position: absolute;
-    content: ':';
-    right: -10px;
-  }
 }

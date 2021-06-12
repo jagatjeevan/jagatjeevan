@@ -27,10 +27,12 @@ function BlogSummary(props) {
           <Link href={`/blogs/${filenameWithoutExt}`}>{title}</Link>
         </header>
         <div className={styles.dateAndReadTime}>
-          Created on{' : '}
-          <time dateTime={date} value={date} className={styles.createdDate}>
-            {new Date(date).toDateString()}
-          </time>
+          <div>
+            Created on{' : '}
+            <time dateTime={date} value={date} className={styles.createdDate}>
+              {new Date(date).toDateString()}
+            </time>
+          </div>
           Read time around : {getReadTime(content).text}
         </div>
         <p>{description}</p>
