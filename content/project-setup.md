@@ -36,4 +36,10 @@ The CLI generally create a project on a framework and do not add extra things to
 
 - **Mock server** : With UI being a separate repo now, to run your code you might require some dummy data (API contract) to see something and test. If it is already set, people might find easy to see the features they are working on and define what should be the response API gives.
 
+- **Multi-language support** : As most of the wants to global, it becomes very evident that the requirement might come for the support of multiple languages. It becomes very difficult to change the hard-coded values later. So if multilanguage support is already in place, it is just a matter of following it.
+
+- **Localisation** : Every project deals with the date and currency in their project. It is better to localize these values. Set it up so that it becomes easy to deal with it. Check for other formatters you would like to add in the starting of the project.
+
 - **Dockerfile** : If you are working on a large team, it would be quite obvious that the project would use Docker to run your project. And if so creating a optimised version of it would help others integrate your code with the complete set.
+
+- **License** : Every project should have a license for their project which tells the user if they could leverage from their project.
