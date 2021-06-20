@@ -76,6 +76,12 @@ pre {
   overflow: auto;
 }
 
+code {
+  background: lighten($color: $page-background-color, $amount: 10);
+  border-radius: calc(var(--border-radius) * 2);
+  padding: 5px;
+}
+
 @keyframes beatHeart {
   0% {
     transform: scale(1);

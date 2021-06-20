@@ -36,6 +36,9 @@ function BlogSummary(props) {
           Read time around : {getReadTime(content).text}
         </div>
         <p>{description}</p>
+        <div className={styles.readMore}>
+          <Link href={`/blogs/${filenameWithoutExt}`}>Read more &gt;&gt;</Link>
+        </div>
       </div>
     </>
   );

@@ -7,7 +7,12 @@ import styles from '../styles/Home.module.scss';
 const GetTalent = () => {
   const [index, setIndex] = useState(0);
 
-  const talent = ['Frontend Development', 'Responsive sites', 'Progressive Web Apps', 'Mailer'];
+  const talent = [
+    'Frontend Development',
+    'Responsive websites',
+    'Progressive Web Apps',
+    'Blogging',
+  ];
 
   const getTalentText = () => {
     return <span className={styles.talent}>{talent[index]}</span>;
@@ -37,19 +42,27 @@ export default function Home() {
           <p>Hey there!</p>
           <p>I am Jagat Jeevan.</p>
           <p>
-            And I do <GetTalent />
+            I do <GetTalent />
           </p>
-          <p>
-            I am currently working @ThoughtWorks, Bengaluru.
-            {/* You could see a summary of things done{' '}
-            <a href="https://jagatjeevan.github.io/portfolio" target="_blank">
-              here
-            </a> */}
-          </p>
+          <p>I am currently working @ThoughtWorks, Bengaluru.</p>
+          <ul className={styles.contactLinks}>
+            <li>
+              <a href="https://github.com/jagatjeevan" target="_blank">
+                Github
+              </a>
+            </li>
+            <li>
+              <a href="mailto:kanhajeevan@gmail.com">Mail me</a>
+            </li>
+            <li>
+              <a href="https://slides.com/kanhajeevan" target="_blank">
+                Blogs in presentation mode
+              </a>
+            </li>
+          </ul>
         </div>
         <img src="/profile.jpeg" className={styles.rounded} />
       </section>
-
       <Footer />
     </article>
   );

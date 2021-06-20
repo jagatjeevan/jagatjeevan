@@ -13,6 +13,10 @@
   background-color: darken($page-background-color, 10);
   p {
     margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
   header {
     font-size: 1.2em;
@@ -34,4 +38,10 @@
 .createdDate {
   position: relative;
   margin-right: 19px;
+}
+
+.readMore {
+  font-size: 0.8em;
+  margin-top: var(--app-spacer);
+  text-align: right;
 }
