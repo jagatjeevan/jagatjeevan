@@ -1,6 +1,6 @@
 ---
 title: 'Progressive Web Applications'
-date: '2020-06-11'
+date: '2021-06-11'
 description: 'Leveraging mobile device capability in web like offline, accessing device features, etc. Harnessing the power of both moblie and web world'
 tags: ['javascript', 'progressive web apps']
 ---

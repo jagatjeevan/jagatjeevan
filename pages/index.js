@@ -8,10 +8,11 @@ const GetTalent = () => {
   const [index, setIndex] = useState(0);
 
   const talent = [
-    'Frontend Development',
-    'Responsive websites',
-    'Progressive Web Apps',
+    'working on Frontend Development',
+    'making Responsive websites',
+    'enhancing to Progressive Web Apps',
     'Blogging',
+    'Problem Solving',
   ];
 
   const getTalentText = () => {
@@ -42,7 +43,7 @@ export default function Home() {
           <p>Hey there!</p>
           <p>I am Jagat Jeevan.</p>
           <p>
-            I do <GetTalent />
+            I love <GetTalent />
           </p>
           <p>I am currently working @ThoughtWorks, Bengaluru.</p>
           <ul className={styles.contactLinks}>

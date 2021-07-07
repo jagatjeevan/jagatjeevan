@@ -1,6 +1,6 @@
 ---
 title: 'Css Grid'
-date: '2020-05-28'
+date: '2021-05-28'
 description: 'Layout your pages leveraging browser support with lesser lines of code. No need to use a bulky framework'
 tags: ['css', 'layout', 'grid-layout']
 ---

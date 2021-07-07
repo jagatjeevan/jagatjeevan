@@ -1,6 +1,6 @@
 ---
 title: 'Project Setup'
-date: '2020-06-20'
+date: '2021-06-20'
 description: 'While setting up a project, we tend to miss some obvious defaults which might take a bit more time than usual if not setup earlier. In this, we would see some of the sensible defaults web has evolved and we should have it in the start of the project.'
 tags: ['project setup']
 ---
