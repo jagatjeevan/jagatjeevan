@@ -25,6 +25,9 @@ function Header() {
           <li className={getActiveLink('/blogs')}>
             <Link href="/blogs">Blogs</Link>
           </li>
+          <li className={getActiveLink('/demo')}>
+            <Link href="/demo">Reference</Link>
+          </li>
           <li>
             <a href="https://jagatjeevan.github.io/portfolio" target="_blank">
               Resume
