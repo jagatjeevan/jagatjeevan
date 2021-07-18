@@ -22,6 +22,13 @@ const Demo = () => {
             Programming in JS
           </a>
         </div>
+        <div className={style.labelDescription}>Loadash functions</div>
+        <div className={style.link}>
+          <a href="https://github.com/jagatjeevan/loadash-challenges" target="_blank">
+            array functions
+          </a>
+        </div>
+
         <div className={style.labelDescription}>A basic indexdb sample</div>
         <div className={style.link}>
           <a href="https://github.com/jagatjeevan/indexDBSpike" target="_blank">

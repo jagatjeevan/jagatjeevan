@@ -1,0 +1,54 @@
+$icon-size: 30px;
+$icon-line-height: 3px;
+
+.navIcon {
+  position: relative;
+  width: $icon-size;
+  height: $icon-size;
+  overflow: hidden;
+  @media screen and (min-width: 520px) {
+    display: none;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: $icon-line-height;
+    background-color: green;
+    transition: 0.5s ease-in-out;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: $icon-line-height;
+      background-color: green;
+      transition: 0.5s ease-in-out;
+    }
+    &::before {
+      top: -10px;
+    }
+    &::after {
+      top: 10px;
+    }
+  }
+
+  &.open {
+    span {
+      background: transparent;
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
