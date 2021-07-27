@@ -67,6 +67,18 @@ h4 {
   margin: 50px 0 10px;
 }
 
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.65rem;
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
 pre {
   background: lighten($color: $page-background-color, $amount: 10);
   border: darken($page-background-color, 10%) solid 1px;
