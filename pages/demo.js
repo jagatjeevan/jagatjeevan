@@ -45,7 +45,7 @@ const Demo = () => {
         </div>
         <div className={style.labelDescription}>React Context API</div>
         <div className={style.link}>
-          <a href="https://github.com/jagatjeevan/virtualization" target="_blank">
+          <a href="https://github.com/jagatjeevan/context-reducer-react" target="_blank">
             React Context &amp; Reducer
           </a>
         </div>
