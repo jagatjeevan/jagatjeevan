@@ -1,7 +1,7 @@
 ---
 title: 'Styled Component'
 date: '2021-07-26'
-description: 'CSS in JS. Moving away from SCSS.'
+description: 'CSS in JS. Use the best bits of ES6 and CSS to style your apps without stress. Get the vendor prefixes without worring about the class name conflict and give a short and meaningful name to classes to every component.'
 tags: ['css in js', 'styled-component']
 ---
 
