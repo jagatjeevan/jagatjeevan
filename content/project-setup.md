@@ -43,3 +43,7 @@ The CLI generally create a project on a framework and do not add extra things to
 - **Dockerfile** : If you are working on a large team, it would be quite obvious that the project would use Docker to run your project. And if so creating a optimised version of it would help others integrate your code with the complete set.
 
 - **License** : Every project should have a license for their project which tells the user if they could leverage from their project.
+
+- **Bookmarks** : It is always important to have your bookmarks segreggated. It makes it handy to access the resources and refer.
+
+- **Github settings** : Since you would be contributing to a project, it is always better to make sure you update the code with the github profile associated. To create one, read [here](/blogs/manage-github-profiles). You can add the ssh-key to avoid typing the username and password all time while pushing the code to the repository.
