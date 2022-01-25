@@ -45,7 +45,7 @@ function Header() {
             <Link href="/demo">Reference</Link>
           </li>
           <li>
-            <a href="https://jagatjeevan.github.io/portfolio" target="_blank">
+            <a href="https://jagatjeevan-portfolio.vercel.app" target="_blank">
               Resume
             </a>
           </li>
