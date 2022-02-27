@@ -10,9 +10,12 @@ const GetTalent = () => {
   const talent = [
     'working on Frontend Development',
     'making Responsive websites',
+    'photography',
     'enhancing to Progressive Web Apps',
-    'Blogging',
-    'Problem Solving',
+    'blogging',
+    'travelling with friends',
+    'problem Solving',
+    'eating',
   ];
 
   const getTalentText = () => {

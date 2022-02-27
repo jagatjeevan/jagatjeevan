@@ -10,7 +10,7 @@
 .blogPost {
   padding: var(--app-spacer);
   border-radius: calc(var(--border-radius) * 2);
-  background-color: darken($page-background-color, 10);
+  background-color: var(--blogpost-background-color);
   p {
     margin: 0;
     overflow: hidden;
@@ -32,7 +32,7 @@
 .dateAndReadTime {
   margin: calc(var(--app-spacer) / 5) 0;
   font-size: 0.8em;
-  color: #a5a5a5;
+  color: var(--date-color);
 }
 
 .createdDate {

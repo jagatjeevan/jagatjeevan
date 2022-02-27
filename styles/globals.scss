@@ -19,6 +19,10 @@
 
   // Border
   --perforated-line: #545454 dotted 1px;
+
+  // Component
+  --blogpost-background-color: #{$blogpost-background-color};
+  --date-color: #{$date-color};
 }
 
 html,
