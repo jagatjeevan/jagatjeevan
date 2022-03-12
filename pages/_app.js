@@ -1,5 +1,6 @@
-import Head from "next/head";
-import "../styles/globals.scss";
+import Head from 'next/head';
+import { Provider as ThemeProvider } from '../src/context/themeContext';
+import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -7,7 +8,9 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Jagat Jeevan Sahoo</title>
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }

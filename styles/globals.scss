@@ -16,13 +16,30 @@
   --blog-title-color: orange;
   --tagline-color: #b99d78;
   --talent-color: #00ffff;
+  --code-background: #{$code-background};
+  --code-border: #{$code-border-color} solid 1px;
 
   // Border
   --perforated-line: #545454 dotted 1px;
 
   // Component
   --blogpost-background-color: #{$blogpost-background-color};
+  --header-active-link-background: #{$header-active-link-background};
   --date-color: #{$date-color};
+  --switch-border: #{$date-color} solid 1px;
+  --switch-background: #{$page-background-color};
+}
+
+body.light-theme {
+  --page-background-color: #e7e7e7;
+  --page-text-color: #292929;
+  --talent-color: #35bdbd;
+
+  // Component
+  --switch-background: #e7e7e7;
+  --blogpost-background-color: #d1d1d1;
+  --header-active-link-background: #d1d1d1;
+  --code-background: #d1d1d1;
 }
 
 html,
@@ -84,8 +101,8 @@ h3 {
 }
 
 pre {
-  background: lighten($color: $page-background-color, $amount: 10);
-  border: darken($page-background-color, 10%) solid 1px;
+  background: var(--code-background);
+  border: var(--code-border);
   padding: var(--app-spacer);
   border-radius: calc(var(--border-radius) * 2);
   max-width: 100%;
@@ -93,7 +110,7 @@ pre {
 }
 
 code {
-  background: lighten($color: $page-background-color, $amount: 10);
+  background: var(--code-background);
   border-radius: calc(var(--border-radius) * 2);
   padding: 5px;
   line-height: 1.5em;

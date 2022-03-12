@@ -1,0 +1,30 @@
+$switch-border-radius: 30px;
+
+.switchContainer {
+    min-width: 65px;
+    border: var(--switch-border);
+    border-radius: $switch-border-radius;
+    padding: 1px;
+    display: flex;
+}
+
+.handle {
+    min-width: 25px;
+    border-radius: $switch-border-radius;
+    border: var(--switch-border);
+    background-color: var(--switch-background);
+    height: 100%;
+    position: relative;
+    transition: transform 0.5s;
+
+    &.nightMode {
+        transform: translateX(35px);
+    }
+    &.lightMode {
+        transform: translateX(0);
+    }
+
+    i {
+        color: var(--page-background-colorr);
+    }
+}

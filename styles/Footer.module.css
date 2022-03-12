@@ -1,4 +1,6 @@
 .footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
   text-align: center;
   padding: var(--app-spacer);
   border-top: var(--perforated-line);

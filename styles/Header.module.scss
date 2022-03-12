@@ -85,5 +85,5 @@ a {
 }
 
 .activeLink {
-  background: darken($color: rgba(26, 24, 24, 0.87), $amount: 5%);
+  background: var(--header-active-link-background);
 }
