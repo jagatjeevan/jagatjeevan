@@ -11,11 +11,13 @@ const GetTalent = () => {
     'working on Frontend Development',
     'making Responsive websites',
     'photography',
+    "Playing chess",
     'enhancing to Progressive Web Apps',
     'blogging',
     'travelling with friends',
-    'problem Solving',
-    'eating',
+    'problem solving',
+    'structuring code with Micro-frontend',
+    'eating almost all edibles',
   ];
 
   const getTalentText = () => {
