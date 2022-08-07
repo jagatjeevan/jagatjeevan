@@ -1,44 +1,59 @@
 const path = require('path');
 const fs = require('fs');
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Footer from '../../src/components/Footer';
 import Header from '../../src/components/Header';
 import BlogTile from '../../src/components/BlogTile';
 
 import styles from '../../styles/blogPosts.module.scss';
-
-const blogsSortByDate = (a, b) => {
-  const aDate = new Date(a.data?.date).getTime();
-  const bDate = new Date(b.data?.date).getTime();
-  return (aDate - bDate) > 1 ? 1 : -1;
-}
+import {
+  sortByAlphabet,
+  sortByLatestDate,
+  sortByOldestDate,
+  sortValues,
+} from '../../src/config/sortValues';
 
 function Blogs(props) {
-  const { blogs = [] } = props;
+  const { blogs = [], sortedBy } = props;
   const [sortedBlogs, setSortedBlogs] = useState(blogs);
+  const [sortBy, setSortBy] = useState(sortedBy);
 
-  useEffect(() => {
-    setSortedBlogs(props.blogs);
-  }, [props.blogs]);
+  const handleSort = (e) => {
+    setSortBy(e.target.value);
+    if (e.target.value === sortValues.alphabetically) {
+      setSortedBlogs(sortedBlogs.sort(sortByAlphabet));
+    }
 
-  if(!blogs.length) return "No blogs found";
+    if (e.target.value === sortValues.newFirst) {
+      setSortedBlogs(sortedBlogs.sort(sortByLatestDate));
+    }
 
+    if (e.target.value === sortValues.oldFirst) {
+      setSortedBlogs(sortedBlogs.sort(sortByOldestDate));
+    }
+  };
+
+  if (!blogs.length) return 'No blogs found';
+
+  const containerClassName = `app-container ${styles.blogPageLayout}`;
   return (
     <article className="layout">
       <Header />
-      <section className="app-container">
+      <section className={containerClassName}>
         <p className={styles.summary}>Total number of posts : {blogs.length}</p>
+        <label className={styles.selectSortType}>
+          Sort By :
+          <select onChange={handleSort} value={sortBy}>
+            <option value={sortValues.newFirst}>Newest First</option>
+            <option value={sortValues.oldFirst}>Old First</option>
+            <option value={sortValues.alphabetically}>Alphabetically</option>
+          </select>
+        </label>
         <div className={styles.blogsContainer}>
-          {sortedBlogs.map((blog, index) => {
-            return (
-              <BlogTile
-                blog={blog}
-                key={blog.filenames[index]}
-                filename={blog.filenames[index]}
-              />
-            );
-          })}
+          {sortedBlogs.map((blog) => (
+            <BlogTile blog={blog} key={blog.filename} filename={blog.filename} />
+          ))}
         </div>
       </section>
       <Footer />
@@ -56,7 +71,7 @@ export async function getStaticProps() {
     const filePath = path.join(contentDirectory, filename);
     const fileContents = fs.readFileSync(filePath, 'utf8');
     return {
-      filenames,
+      filename,
       content: fileContents,
     };
   });
@@ -64,6 +79,7 @@ export async function getStaticProps() {
   return {
     props: {
       blogs,
+      sortedBy: sortValues.alphabetically,
     },
   };
 }

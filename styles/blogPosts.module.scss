@@ -1,10 +1,37 @@
 @import './variables';
 
+.blogPageLayout {
+  @media (min-width: 490px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .blogsContainer {
   display: grid;
   grid-gap: calc(var(--app-spacer) / 2);
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   grid-auto-flow: dense;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.selectSortType {
+  justify-self: end;
+  @media (max-width: 490px) {
+    margin-bottom: var(--app-spacer);
+    display: block;
+  }
+
+  select {
+    margin-left: calc(var(--app-spacer) / 2);
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    border: var(--perforated-line);
+    background: transparent;
+    color: inherit;
+    font-size: 0.8rem;
+  }
 }
 
 .blogPost {
