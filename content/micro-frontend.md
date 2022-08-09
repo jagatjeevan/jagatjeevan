@@ -40,22 +40,27 @@ Mostly there are four types of composing techniques used. Those are (Code Bundli
 - Build time + Reverse Composition
 - Run time + App shell 
 - Run time + Reverse Composition
-- Build time: The code is bundled when the code is compiled.
 
-Run time: When the bundled code is fetched during the run time.
+**Build time**: The code is bundled when the code is compiled.
+
+**Run time**: When the bundled code is fetched during the run time.
 App shell Composition: When there is an application shell and content is rendered inside the app shell.
-Reverse composition: The application is sliced w.r.t routes. The commonly used modules are included in each of the *mfe.
+
+**Reverse composition**: The application is sliced w.r.t routes. The commonly used modules are included in each of the *mfe.
 
 ### Communication
 Generally, there are two ways of communication among *mfe. 
-Using a global object to communicate: Each mfe uses a global object to transfer data to other *mfes. Here the global object is the window object. *Mfe uses window object, localStorage, sessionStorage, indexedDB, cookies, etc.
 
-Event-based communication: Using custom events and event bubbling to communicate with other *mfe for communication. 
+**Using a global object to communicate**: Each mfe uses a global object to transfer data to other *mfes. Here the global object is the window object. *Mfe uses window object, localStorage, sessionStorage, indexedDB, cookies, etc.
+
+**Event-based communication**: Using custom events and event bubbling to communicate with other *mfe for communication. 
 
 ### Testing
-Unit testing: There would not be any change in unit testing. It becomes easy for testing as there would be lesser codes in the *mfe.
-Integration testing: There would not be much of a change here as well. 
-E2E testing: The testing is very much needed. Since the application is broken into *mfes, it is very much required to make sure the test is well written and thoroughly tested.
+**Unit testing**: There would not be any change in unit testing. It becomes easy for testing as there would be lesser codes in the *mfe.
+
+**Integration testing**: There would not be much of a change here as well. 
+
+**E2E testing**: The testing is very much needed. Since the application is broken into *mfes, it is very much required to make sure the test is well written and thoroughly tested.
 
 Other necessities to take care of
 - Team formation
@@ -69,7 +74,12 @@ Other necessities to take care of
 - Maintain ADRs
 
 ## Do we want MFE or not?
-It is highly recommended not to think of *mfe from scratch but keep the code modular. Moving the code from monolithic code to *mfe is a journey. 
+- It is highly recommended not to think of *mfe from scratch but keep the code modular.
+- Moving the code from monolithic code to *mfe is a journey. 
+- Have domain boundaries clearly stated. 
+- Check on the pattern you would like to use in your application.
+- It adds complexity. Look at the complexity vrs advantages before trying out.
+- Play a devils advocate to be sure the problem statement is solved by microfrontend.
 
 ## References
 https://martinfowler.com/articles/micro-frontends.html
