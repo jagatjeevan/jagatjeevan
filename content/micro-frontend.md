@@ -34,7 +34,6 @@ The first thing to think about is how to break the application. There is no righ
 - Keeping critical functionality separate
 
 ### Composing
-[Image]
 Mostly there are four types of composing techniques used. Those are (Code Bundling + Composing technique):
 - Build time + App shell 
 - Build time + Reverse Composition
@@ -42,9 +41,11 @@ Mostly there are four types of composing techniques used. Those are (Code Bundli
 - Run time + Reverse Composition
 
 **Build time**: The code is bundled when the code is compiled.
+![build time composing](/micro-frontend/buildtime.png)
 
 **Run time**: When the bundled code is fetched during the run time.
 App shell Composition: When there is an application shell and content is rendered inside the app shell.
+![run time composing](/micro-frontend/runtime.png)
 
 **Reverse composition**: The application is sliced w.r.t routes. The commonly used modules are included in each of the *mfe.
 
@@ -90,5 +91,3 @@ https://livebook.manning.com/book/micro-frontends-in-action/micro-frontends-in-a
 ## Code
 https://github.com/jagatjeevan/xconf-mfe
 There are branches where we are moving the spa to various *mfes
-
-
