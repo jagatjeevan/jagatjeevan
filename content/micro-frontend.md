@@ -83,11 +83,12 @@ Other necessities to take care of
 - Play a devils advocate to be sure the problem statement is solved by microfrontend.
 
 ## References
-https://martinfowler.com/articles/micro-frontends.html
-https://www.thoughtworks.com/en-in/about-us/events/webinars/microfrontend
-https://www.youtube.com/watch?v=iZ-wIViaefc
-https://livebook.manning.com/book/micro-frontends-in-action/micro-frontends-in-action/
+- https://martinfowler.com/articles/micro-frontends.html
+- https://www.thoughtworks.com/en-in/about-us/events/webinars/microfrontend
+- https://www.youtube.com/watch?v=iZ-wIViaefc
+- https://livebook.manning.com/book/micro-frontends-in-action/micro-frontends-in-action/
 
 ## Code
-https://github.com/jagatjeevan/xconf-mfe
+`https://github.com/jagatjeevan/xconf-mfe`
+
 There are branches where we are moving the spa to various *mfes
