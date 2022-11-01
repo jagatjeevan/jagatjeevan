@@ -10,6 +10,7 @@ import Footer from '../../src/components/Footer';
 import ReactMarkdown from 'react-markdown';
 
 import styles from '../../styles/blogPost.module.scss';
+import RazorPayButton from '../../src/components/RazorPayButton';
 
 function Blog(props) {
   const { content, data } = props;
@@ -38,6 +39,7 @@ function Blog(props) {
             </div>
           </header>
           <ReactMarkdown>{content}</ReactMarkdown>
+          <RazorPayButton />
         </section>
         <Footer />
       </article>
