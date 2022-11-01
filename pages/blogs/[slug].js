@@ -1,19 +1,26 @@
 import path from 'path';
 import { promises as fsp } from 'fs';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import matter from 'gray-matter';
 
 import Header from '../../src/components/Header';
 import Footer from '../../src/components/Footer';
 import ReactMarkdown from 'react-markdown';
+import RazorPayButton from '../../src/components/RazorPayButton';
 
 import styles from '../../styles/blogPost.module.scss';
-import RazorPayButton from '../../src/components/RazorPayButton';
 
 function Blog(props) {
   const { content, data } = props;
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setIsPageLoaded(true), 0);
+  }, []);
+
+  const getRazorPayButton = isPageLoaded ? <RazorPayButton /> : null;
 
   return (
     <>
@@ -39,7 +46,14 @@ function Blog(props) {
             </div>
           </header>
           <ReactMarkdown>{content}</ReactMarkdown>
-          <RazorPayButton />
+          <div className="razorpay-button-container">
+            <p>
+              If you feel, it has helped you in learning something today and if you feel to keep me
+              motivated to help the community with blogs like this, please feel free to buy me a
+              coffee by clicking the button below.
+            </p>
+            <form id="razorpay-container">{getRazorPayButton}</form>
+          </div>
         </section>
         <Footer />
       </article>

@@ -1,0 +1,30 @@
+@keyframes beatHeart {
+  0% {
+    transform: scale(1);
+    color: $heart-beat-color;
+  }
+  25% {
+    transform: scale(1.1);
+    color: lighten($heart-beat-color, 10%);
+  }
+  40% {
+    transform: scale(1);
+    color: $heart-beat-color;
+  }
+  60% {
+    transform: scale(1.1);
+    color: lighten($heart-beat-color, 10%);
+  }
+  100% {
+    transform: scale(1);
+    color: $heart-beat-color;
+  }
+}
+
+.hearts {
+  color: #ef2b2b;
+  animation-name: beatHeart;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  display: inline-block;
+}

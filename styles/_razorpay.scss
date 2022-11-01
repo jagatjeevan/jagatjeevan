@@ -1,0 +1,16 @@
+.razorpay-button-container {
+  padding: calc(var(--app-spacer) / 2) var(--app-spacer);
+  margin: var(--app-spacer) 0 0;
+  background: var(--code-background);
+  border: var(--code-border);
+  border-radius: calc(var(--border-radius) * 2);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: calc(var(--app-spacer) / 2);
+
+  p {
+    margin: 0;
+    font-size: 0.8em;
+    line-height: 1.5em;
+  }
+}
