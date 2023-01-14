@@ -36,7 +36,7 @@ const Demo = () => {
           </a>
         </div>
 
-        <div className={style.sectionHeader}>React</div>
+        <div className={style.sectionHeader}>React and NextJs</div>
         <div className={style.labelDescription}>Virtualization implemented in React</div>
         <div className={style.link}>
           <a href="https://github.com/jagatjeevan/virtualization" target="_blank">
@@ -47,6 +47,12 @@ const Demo = () => {
         <div className={style.link}>
           <a href="https://github.com/jagatjeevan/context-reducer-react" target="_blank">
             React Context &amp; Reducer
+          </a>
+        </div>
+        <div className={style.labelDescription}>NextJs with Apollo</div>
+        <div className={style.link}>
+          <a href="https://next-apollo-jagatjeevan.vercel.app/" target="_blank">
+            NextJs with Apollo Client
           </a>
         </div>
         <div className={style.sectionHeader}>Progressive Web Apps</div>
