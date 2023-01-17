@@ -49,10 +49,12 @@ const Demo = () => {
             React Context &amp; Reducer
           </a>
         </div>
-        <div className={style.labelDescription}>NextJs with Apollo</div>
+
+        <div className={style.sectionHeader}>GraphQL</div>
+        <div className={style.labelDescription}>NextJs and GraphQL</div>
         <div className={style.link}>
           <a href="https://next-apollo-jagatjeevan.vercel.app/" target="_blank">
-            NextJs with Apollo Client
+            GraphQL in NextJs setup
           </a>
         </div>
         <div className={style.sectionHeader}>Progressive Web Apps</div>
