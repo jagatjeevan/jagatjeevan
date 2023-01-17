@@ -42,7 +42,7 @@ function Header() {
             <Link href="/blogs">Blogs</Link>
           </li>
           <li className={getActiveLink('/demo')}>
-            <Link href="/demo">Reference</Link>
+            <Link href="/references">Reference</Link>
           </li>
           <li>
             <a href="https://jagatjeevan-portfolio.vercel.app" target="_blank">

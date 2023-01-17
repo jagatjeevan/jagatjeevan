@@ -1,4 +1,20 @@
-.minionContainer {
-  width: 170px;
-  margin: 30px auto 20px;
+.pageNotFoundContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  @media screen and (max-width: 830px) {
+    display: block;
+  }
+}
+
+.imgContainer {
+  grid-row-start: 1;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  align-self: center;
+  justify-self: center;
+  @media screen and (max-width: 830px) {
+    text-align: center;
+    margin-top: 30px;
+  }
 }

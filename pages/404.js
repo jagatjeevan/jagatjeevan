@@ -7,19 +7,21 @@ export default function Custom404() {
   return (
     <article className="layout">
       <Header />
-      <section className="app-container">
-        <h1>OOopsss !</h1>
-        <p>We can't find the page you are looking for</p>
-        <p>
-          You could go to the <Link href="/">homepage</Link> and see other options to navigate.
-        </p>
-        <p>
-          You could also <a href="mailto:kanhajeevan@gmail.com">Mail me</a> regarding the same
-        </p>
-        <div className={styles.minionContainer}>
-          <img src="/minion.png" />
-        </div>
-      </section>
+      <div className={styles.pageNotFoundContainer}>
+        <section>
+          <h1>OOopsss !</h1>
+          <p>We can't find the page you are looking for</p>
+          <p>
+            You could go to the <Link href="/">homepage</Link> and see other options to navigate.
+          </p>
+          <p>
+            You could also <a href="mailto:kanhajeevan@gmail.com">Mail me</a> regarding the same
+          </p>
+        </section>
+        <section className={styles.imgContainer}>
+          <img src="/minion.png" width={170} />
+        </section>
+      </div>
       <Footer />
     </article>
   );
