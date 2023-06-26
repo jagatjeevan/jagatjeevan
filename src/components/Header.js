@@ -45,6 +45,9 @@ function Header() {
             <Link href="/references">Reference</Link>
           </li>
           <li>
+            <Link href="/talks">Talks and Workshops</Link>
+          </li>
+          <li>
             <a href="https://jagatjeevan-portfolio.vercel.app" target="_blank">
               Resume
             </a>

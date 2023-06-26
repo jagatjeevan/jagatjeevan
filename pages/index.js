@@ -11,7 +11,7 @@ const GetTalent = () => {
     'working on Frontend Development',
     'making Responsive websites',
     'photography',
-    "Playing chess",
+    'Playing chess',
     'enhancing to Progressive Web Apps',
     'blogging',
     'travelling with friends',

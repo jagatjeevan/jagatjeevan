@@ -11,6 +11,7 @@ import ReactMarkdown from 'react-markdown';
 import RazorPayButton from '../../src/components/RazorPayButton';
 
 import styles from '../../styles/blogPost.module.scss';
+import Tags from '../../src/components/Tags';
 
 function Blog(props) {
   const { content, data } = props;
@@ -39,11 +40,7 @@ function Blog(props) {
             <div className={styles.createdOn}>
               Created on : {new Date(data.date).toDateString()}
             </div>
-            <div className={styles.tagContainer}>
-              {data.tags.map((tag) => (
-                <span key={tag}>{tag}</span>
-              ))}
-            </div>
+            <Tags data={data.tags} />
           </header>
           <ReactMarkdown>{content}</ReactMarkdown>
           <div className="razorpay-button-container">

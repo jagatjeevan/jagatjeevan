@@ -1,0 +1,25 @@
+.talksList {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  padding: 20px 0;
+  border-bottom: var(--perforated-line);
+
+  img {
+    width: 100px;
+    height: auto;
+    border-radius: calc(var(--border-radius) * 2);
+  }
+
+  p {
+    font-size: 0.8em;
+    margin: 7px 0 0;
+  }
+
+  b {
+    margin-left: 5px;
+  }
+}
+
+.tagContainer {
+  padding: 10px 0;
+}

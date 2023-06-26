@@ -16,19 +16,6 @@
   }
 }
 
-.tagContainer {
-  grid-column-start: 1;
-  grid-column-end: -1;
-  font-size: 0.8em;
-
-  span {
-    padding: 5px 10px;
-    border-radius: var(--border-radius);
-    border: var(--perforated-line);
-    margin-right: 10px;
-  }
-}
-
 .createdOn {
   @media screen and (min-width: 600px) {
     justify-self: end;
