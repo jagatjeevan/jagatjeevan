@@ -67,7 +67,7 @@ export default function Home() {
             </li>
           </ul>
         </div>
-        <img src="/profile.jpeg" className={styles.rounded} />
+        <img src="/profile.jpeg" className={styles.profileImage} />
       </section>
       <Footer />
     </article>

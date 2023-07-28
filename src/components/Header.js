@@ -12,7 +12,7 @@ function Header() {
   useEffect(() => {
     const height = document.querySelector('#navbar').offsetHeight;
     const windowWidth = window.innerWidth;
-    if (windowWidth < 521) {
+    if (windowWidth < 800) {
       document.querySelector('#navbar').setAttribute('style', `height: ${height}px`);
     }
   }, []);
