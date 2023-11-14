@@ -85,6 +85,12 @@ const config = {
         link: 'https://github.com/jagatjeevan/googleForm',
         label: 'Customised Google Form',
       },
+      {
+        id: 2,
+        description: 'Keeping all applications in one folder',
+        link: 'https://github.com/jagatjeevan/mono-repo',
+        label: 'Mono repo',
+      },
     ],
   },
 };
