@@ -20,6 +20,7 @@
   --talent-color: #00ffff;
   --code-background: #{$code-background};
   --code-border: #{$code-border-color} solid 1px;
+  --razorpay-banner-bg: #2e3734;
 
   // Border
   --perforated-line: #545454 dotted 1px;
@@ -35,7 +36,10 @@
 body.light-theme {
   --page-background-color: #e7e7e7;
   --page-text-color: #292929;
-  --talent-color: #35bdbd;
+  --talent-color: #178383;
+  --blog-title-color: #9f711d;
+  --date-color: #817b7b;
+  --razorpay-banner-bg: #adc5bd;
 
   // Component
   --switch-background: #e7e7e7;
@@ -129,4 +133,9 @@ code {
   > * {
     border-bottom: #35bdbd dotted 1px;
   }
+}
+
+.app-container li {
+  list-style-type: disclosure-closed;
+  margin-bottom: 8px;
 }

@@ -1,7 +1,7 @@
 .razorpay-button-container {
   padding: calc(var(--app-spacer) / 2) var(--app-spacer);
-  margin: var(--app-spacer) 0 0;
-  background: var(--code-background);
+  margin: calc(var(--app-spacer) * 5) 0 0;
+  background: var(--razorpay-banner-bg);
   border: var(--code-border);
   border-radius: calc(var(--border-radius) * 2);
   display: grid;
