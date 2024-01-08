@@ -47,3 +47,5 @@ The CLI generally create a project on a framework and do not add extra things to
 - **Bookmarks** : It is always important to have your bookmarks segreggated. It makes it handy to access the resources and refer.
 
 - **Github settings** : Since you would be contributing to a project, it is always better to make sure you update the code with the github profile associated. To create one, read [here](/blogs/manage-github-profiles). You can add the ssh-key to avoid typing the username and password all time while pushing the code to the repository.
+
+You might also want to look into the checks for moving the code to production. You could check it [here](/blogs/moving-the-code-to-production).
