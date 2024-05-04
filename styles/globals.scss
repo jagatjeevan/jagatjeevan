@@ -136,6 +136,7 @@ code {
 }
 
 .app-container li {
-  list-style-type: disclosure-closed;
+  list-style-type: square;
   margin-bottom: 8px;
+  padding-left: calc(var(--app-spacer) / 5);
 }
