@@ -12,6 +12,7 @@
 
   // Colors
   --page-background-color: #{$page-background-color};
+  --menu-background-color: #212121;
   --page-text-color: rgb(233, 233, 233);
   --logo-color: #d8cd41;
   --link-color: rgb(51, 149, 240);
@@ -35,6 +36,7 @@
 
 body.light-theme {
   --page-background-color: #e7e7e7;
+  --menu-background-color: #e0e0e0;
   --page-text-color: #292929;
   --talent-color: #178383;
   --blog-title-color: #9f711d;

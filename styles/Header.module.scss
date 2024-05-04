@@ -41,7 +41,7 @@ a {
 }
 
 .open {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.25s ease-in-out;
   margin-top: 20px;
 }
 
@@ -49,7 +49,7 @@ a {
   grid-column-start: 1;
   grid-column-end: -1;
   text-align: right;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.25s ease-in-out;
 
   &.closed {
     height: 0 !important;
@@ -70,7 +70,7 @@ a {
   padding: 0;
   margin: 0;
   list-style-type: none;
-  background-color: darken($color: $page-background-color, $amount: 3%);
+  background-color: var(--menu-background-color);
   @media screen and (min-width: $menu-breakpoint) {
     display: flex;
     background-color: transparent;
@@ -79,7 +79,10 @@ a {
 
   li {
     padding: 10px;
-    border-bottom: 1px dotted lighten($page-background-color, 5%);
+    border-bottom: var(--perforated-line);
+    &:last-child {
+      border-bottom: 0;
+    }
     @media screen and (min-width: $menu-breakpoint) {
       padding: 5px 10px;
       border-radius: var(--border-radius);
