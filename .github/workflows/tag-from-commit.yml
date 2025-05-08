@@ -3,7 +3,7 @@ name: Create Tag from Commit Message
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   create_tag_if_needed:
