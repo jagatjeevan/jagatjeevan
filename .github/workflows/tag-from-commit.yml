@@ -1,0 +1,28 @@
+name: Create Tag from Commit Message
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  tag_from_commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get last commit message
+        id: get_commit
+        run: |
+          echo "commit_msg=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+
+      - name: Create Tag if Commit Message Contains 'create a tag'
+        if: contains(steps.get_commit.outputs.commit_msg, 'create a tag:')
+        run: |
+          version=$(echo "${{ steps.get_commit.outputs.commit_msg }}" | grep -oP 'create a tag: \K(v[0-9]+\.[0-9]+\.[0-9]+)')
+          if [ -n "$version" ]; then
+            git tag "$version"
+            git push origin "$version"
+          fi
