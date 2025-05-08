@@ -6,8 +6,11 @@ on:
       - main
 
 jobs:
-  tag_from_commit:
+  create_tag_if_needed:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # Required to push tags
 
     steps:
       - name: Checkout code
@@ -16,13 +19,22 @@ jobs:
       - name: Get last commit message
         id: get_commit
         run: |
-          echo "commit_msg=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+          echo "commit_message=$(git log -1 --pretty=format:%s)" >> $GITHUB_ENV
 
-      - name: Create Tag if Commit Message Contains 'create a tag'
-        if: contains(steps.get_commit.outputs.commit_msg, 'create a tag:')
+      - name: Check if commit message contains 'create a tag :'
+        id: check_tag
         run: |
-          version=$(echo "${{ steps.get_commit.outputs.commit_msg }}" | grep -oP 'create a tag: \K(v[0-9]+\.[0-9]+\.[0-9]+)')
-          if [ -n "$version" ]; then
-            git tag "$version"
-            git push origin "$version"
+          if [[ "$commit_message" =~ create\ a\ tag\ :\ ([0-9]+\.[0-9]+\.[0-9]+) ]]; then
+            echo "tag_version=${BASH_REMATCH[1]}" >> $GITHUB_OUTPUT
+            echo "tag_found=true" >> $GITHUB_ENV
+          else
+            echo "tag_found=false" >> $GITHUB_ENV
           fi
+
+      - name: Create and push tag
+        if: env.tag_found == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag ${{ steps.check_tag.outputs.tag_version }}
+          git push origin ${{ steps.check_tag.outputs.tag_version }}
