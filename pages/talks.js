@@ -2,6 +2,7 @@ import Header from '../src/components/Header';
 import styles from '../styles/talks.module.scss';
 import Link from 'next/link';
 import Tags from '../src/components/Tags';
+import Footer from '../src/components/Footer';
 
 const talksList = [
   {
@@ -55,6 +56,7 @@ const Talks = () => {
           <ShowTalksList data={talk} key={talk.topic} />
         ))}
       </section>
+      <Footer />
     </article>
   );
 };

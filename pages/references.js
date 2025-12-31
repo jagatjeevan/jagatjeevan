@@ -99,6 +99,17 @@ const config = {
       },
     ],
   },
+  courses: {
+    header: { name: 'Courses' },
+    body: [
+      {
+        id: 1,
+        description: 'Learning DSA using JavaScript',
+        link: 'https://github.com/jagatjeevan/dsa-learning',
+        label: 'DSA in JS',
+      },
+    ],
+  },
 };
 
 const SectionHeader = ({ name }) => {
