@@ -18,7 +18,9 @@
 .logoName {
   font-size: 42px;
   color: var(--logo-color);
-  text-shadow: 1px 1px 1px #a3e6b6, 3px 3px 2px #b16583;
+  text-shadow:
+    1px 1px 1px #a3e6b6,
+    3px 3px 2px #b16583;
 }
 
 .tagline {
@@ -80,9 +82,6 @@ a {
   li {
     padding: 10px;
     border-bottom: var(--perforated-line);
-    &:last-child {
-      border-bottom: 0;
-    }
     @media screen and (min-width: $menu-breakpoint) {
       padding: 5px 10px;
       border-radius: var(--border-radius);

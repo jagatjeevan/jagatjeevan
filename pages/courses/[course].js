@@ -31,7 +31,7 @@ function Course({ course, chapters }) {
           </header>
 
           <section className={styles.learningSection}>
-            <h2>What you will learn</h2>
+            <h2>{course.outcomesHeading || 'What you will learn'}</h2>
             <ul>
               {course.outcomes.map((outcome) => (
                 <li key={outcome}>{outcome}</li>
@@ -40,7 +40,7 @@ function Course({ course, chapters }) {
           </section>
           <div className={styles.twoColumn}>
             <section className={styles.learningSection}>
-              <h2>Where to use React</h2>
+              <h2>{course.useCasesHeading || 'Where to use this'}</h2>
               <ul>
                 {course.useCases.map((item) => (
                   <li key={item}>{item}</li>
@@ -48,7 +48,7 @@ function Course({ course, chapters }) {
               </ul>
             </section>
             <section className={styles.learningSection}>
-              <h2>When React may not be the right choice</h2>
+              <h2>{course.avoidCasesHeading || 'When this may not be the right choice'}</h2>
               <ul>
                 {course.avoidCases.map((item) => (
                   <li key={item}>{item}</li>
@@ -62,7 +62,7 @@ function Course({ course, chapters }) {
           </section>
 
           <section className={styles.chapterIndex}>
-            <h2>Course chapters</h2>
+            <h2>{course.chaptersHeading || 'Course chapters'}</h2>
             <ol>
               {chapters.map((chapter) => (
                 <li key={chapter.slug}>
@@ -81,7 +81,7 @@ function Course({ course, chapters }) {
           </section>
 
           <section className={styles.references} id="references">
-            <h2>References and further reading</h2>
+            <h2>{course.referencesHeading || 'References and further reading'}</h2>
             <ul>
               {course.references.map((reference) => (
                 <li key={reference.url}>

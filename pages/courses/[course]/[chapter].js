@@ -36,8 +36,8 @@ function CourseChapter({ course, chapters, chapter }) {
                 href={chapter.tryItUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Try this chapter in an online React sandbox"
-                title="Try this chapter in an online React sandbox"
+                aria-label={`Try this chapter in the ${course.sandboxName || 'online sandbox'}`}
+                title={`Try this chapter in the ${course.sandboxName || 'online sandbox'}`}
               >
                 <i className="fa-solid fa-code" aria-hidden="true" />
                 <span>Try it</span>
