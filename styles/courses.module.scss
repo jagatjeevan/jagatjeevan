@@ -1,0 +1,622 @@
+.coursePage {
+  padding-top: calc(var(--app-spacer) * 1.5);
+  padding-bottom: calc(var(--app-spacer) * 2);
+}
+
+.pageHeader,
+.courseHeader,
+.chapterHeader {
+  margin-bottom: calc(var(--app-spacer) * 1.5);
+
+  h1,
+  h2 {
+    margin-top: 8px;
+  }
+
+  p {
+    max-width: 760px;
+  }
+}
+
+.pageHeader h1,
+.courseHeader h1,
+.chapterHeader h1 {
+  color: var(--blog-title-color);
+}
+
+.eyebrow {
+  color: var(--date-color);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.lead {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 760px;
+}
+
+.courseGrid {
+  display: grid;
+  gap: var(--app-spacer);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+.courseCard,
+.learningSection,
+.chapterIndex,
+.references,
+.chapterSidebar {
+  background: var(--blogpost-background-color);
+  border: var(--perforated-line);
+  border-radius: calc(var(--border-radius) * 2);
+  padding: var(--app-spacer);
+}
+
+.courseCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h2 {
+    margin: 8px 0;
+    font-size: 1.4rem;
+  }
+
+  > a:last-child {
+    margin-top: auto;
+    padding-top: var(--app-spacer);
+  }
+}
+
+.courseMeta {
+  color: var(--date-color);
+  font-size: 0.85rem;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: var(--app-spacer);
+}
+
+.learningSection {
+  margin-bottom: var(--app-spacer);
+
+  h2 {
+    font-size: 1.25rem;
+    margin: 0 0 12px;
+  }
+
+  ul {
+    margin-bottom: 0;
+    padding-left: 22px;
+  }
+}
+
+.twoColumn {
+  display: grid;
+  gap: var(--app-spacer);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.courseDescription {
+  line-height: 1.7;
+  margin: calc(var(--app-spacer) * 1.5) 0;
+}
+
+.chapterIndex {
+  margin-top: calc(var(--app-spacer) * 1.5);
+
+  h2 {
+    margin-top: 0;
+  }
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li + li {
+    border-top: var(--perforated-line);
+  }
+
+  li {
+    align-items: center;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 40px 1fr;
+    padding: 14px 4px;
+  }
+
+  li a {
+    font-weight: bold;
+  }
+
+  small {
+    color: var(--date-color);
+    display: block;
+    margin-top: 4px;
+  }
+
+  .chapterDetails {
+    min-width: 0;
+  }
+}
+
+.chapterNumber {
+  color: var(--blog-title-color);
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.2rem;
+}
+
+.references {
+  margin-top: calc(var(--app-spacer) * 1.5);
+
+  h2 {
+    margin-top: 0;
+  }
+
+  li {
+    line-height: 1.5;
+  }
+}
+
+.chapterHeader {
+  margin-bottom: var(--app-spacer);
+}
+
+.tryItLink {
+  align-items: center;
+  border: var(--perforated-line);
+  border-radius: var(--border-radius);
+  display: inline-flex;
+  font-size: 0.78rem;
+  gap: 7px;
+  padding: 6px 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  i {
+    font-size: 0.82rem;
+  }
+}
+
+.chapterLayout {
+  align-items: start;
+  display: grid;
+  gap: var(--app-spacer);
+  grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);
+}
+
+.chapterLinks {
+  display: flex;
+  gap: var(--app-spacer);
+  justify-content: space-between;
+  margin-top: calc(var(--app-spacer) * 1.5);
+  padding-top: var(--app-spacer);
+  border-top: var(--perforated-line);
+
+  a {
+    align-items: center;
+    display: inline-flex;
+    gap: 6px;
+    font-size: 0.8rem;
+
+    i {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.chapterSidebar {
+  position: sticky;
+  top: 16px;
+
+  h2 {
+    font-size: 1.1rem;
+    margin: 0 0 10px;
+  }
+
+  ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  li {
+    margin: 8px 0;
+    padding-left: 0;
+  }
+
+  a {
+    color: inherit;
+    font-size: 0.9rem;
+  }
+}
+
+.currentChapter {
+  color: var(--blog-title-color) !important;
+  font-weight: bold;
+}
+
+.chapterMain {
+  min-width: 0;
+  line-height: 1.7;
+
+  h2,
+  h3 {
+    margin-top: 1.6em;
+  }
+
+  p,
+  li {
+    line-height: 1.7;
+  }
+}
+
+.markdownContent {
+  overflow-wrap: anywhere;
+}
+
+.savedHighlight {
+  background: rgba(239, 190, 64, 0.48);
+  border-radius: 2px;
+  color: inherit;
+  padding: 1px 0;
+}
+
+.commentedHighlight {
+  background: rgba(35, 202, 158, 0.38);
+  box-shadow: inset 0 -2px rgba(35, 202, 158, 0.9);
+}
+
+.selectionCommentButton,
+.courseNotesButton {
+  align-items: center;
+  background: var(--blog-title-color);
+  border: 0;
+  border-radius: 999px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.32);
+  color: #1a1a1a;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  z-index: 100;
+
+  &:focus-visible {
+    outline: 3px solid var(--link-color);
+    outline-offset: 3px;
+  }
+
+  i {
+    font-size: 1.15rem;
+  }
+}
+
+.selectionCommentButton {
+  height: 38px;
+  padding: 9px;
+  position: fixed;
+  width: 38px;
+
+  svg {
+    fill: currentColor;
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.courseNotesButton {
+  bottom: 24px;
+  height: 54px;
+  padding: 0;
+  position: fixed;
+  right: 24px;
+  width: 54px;
+
+  span {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 999px;
+    display: inline-flex;
+    font-size: 0.75rem;
+    height: 22px;
+    justify-content: center;
+    min-width: 22px;
+    padding: 0 5px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+  }
+}
+
+.drawerBackdrop {
+  background: rgba(0, 0, 0, 0.58);
+  inset: 0;
+  position: fixed;
+  z-index: 200;
+}
+
+.notesDrawer {
+  background: var(--page-background-color);
+  border-left: var(--perforated-line);
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  max-width: 100%;
+  overflow-y: auto;
+  padding: calc(var(--app-spacer) * 1.25);
+  width: 460px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.drawerHeader {
+  align-items: flex-start;
+  border-bottom: var(--perforated-line);
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 14px;
+
+  h2 {
+    font-size: 1.45rem;
+    margin: 4px 0 0;
+  }
+
+  button {
+    background: transparent;
+    border: var(--perforated-line);
+    border-radius: 50%;
+    color: var(--page-text-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: 38px;
+    line-height: 1;
+    width: 38px;
+
+    i {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.drawerViewLink {
+  background: transparent;
+  border: 0;
+  border-radius: var(--border-radius);
+  color: var(--link-color);
+  cursor: pointer;
+  height: 42px;
+  margin: 8px 0;
+  width: 42px;
+
+  &:hover {
+    background: var(--blogpost-background-color);
+  }
+
+  i {
+    font-size: 1rem;
+  }
+}
+
+.visuallyHidden {
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.drawerSection {
+  border-top: var(--perforated-line);
+  margin-top: 8px;
+  padding-top: 16px;
+
+  h3 {
+    font-size: 1.1rem;
+    margin: 0 0 12px;
+  }
+}
+
+.selectedExcerpt {
+  border-left: 3px solid var(--blog-title-color);
+  color: var(--date-color);
+  margin: 0 0 12px;
+  padding-left: 10px;
+}
+
+.drawerLabel {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.drawerLabel textarea {
+  background: var(--blogpost-background-color);
+  border: var(--perforated-line);
+  border-radius: var(--border-radius);
+  color: var(--page-text-color);
+  display: block;
+  font: inherit;
+  margin: 6px 0;
+  max-width: 100%;
+  padding: 10px;
+  resize: vertical;
+  width: 100%;
+}
+
+.savedHint,
+.drawerNoteLink small {
+  color: var(--date-color);
+  font-size: 0.78rem;
+  margin: 4px 0;
+}
+
+.drawerNoteList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    background: var(--blogpost-background-color);
+    border: var(--perforated-line);
+    border-radius: var(--border-radius);
+    list-style: none;
+    margin: 10px 0;
+    overflow: hidden;
+    padding: 12px;
+  }
+}
+
+.drawerNoteLink {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  strong,
+  span {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  strong {
+    color: var(--date-color);
+    font-size: 0.82rem;
+    font-weight: normal;
+    margin-bottom: 7px;
+  }
+
+  span {
+    color: var(--page-text-color);
+    line-height: 1.4;
+    white-space: pre-wrap;
+  }
+
+  &:hover span {
+    color: var(--link-color);
+  }
+
+  small {
+    display: block;
+    margin-top: 8px;
+    text-transform: capitalize;
+  }
+}
+
+.editNoteButton,
+.removeNoteButton,
+.deleteNoteButton,
+.saveNoteButton {
+  align-items: center;
+  background: transparent;
+  border: var(--perforated-line);
+  border-radius: var(--border-radius);
+  color: var(--link-color);
+  cursor: pointer;
+  display: inline-flex;
+  height: 34px;
+  justify-content: center;
+  margin-top: 9px;
+  padding: 0;
+  width: 34px;
+
+  &:hover {
+    background: var(--page-background-color);
+  }
+
+  i {
+    font-size: 0.85rem;
+  }
+}
+
+.deleteNoteButton {
+  color: var(--blog-title-color);
+  margin-left: 8px;
+}
+
+.saveNoteButton {
+  gap: 8px;
+  padding: 6px 12px;
+
+  i {
+    font-size: 0.85rem;
+  }
+}
+
+.emptyNotes {
+  color: var(--date-color);
+  font-size: 0.9rem;
+}
+
+.storageMessage {
+  color: var(--blog-title-color);
+}
+
+.finalReferences {
+  background: var(--blogpost-background-color);
+  border-left: 3px solid var(--blog-title-color);
+  margin-top: calc(var(--app-spacer) * 1.5);
+  padding: 12px;
+}
+
+.chapterNavigation {
+  border-top: var(--perforated-line);
+  display: flex;
+  gap: var(--app-spacer);
+  justify-content: space-between;
+  margin-top: calc(var(--app-spacer) * 1.5);
+  padding-top: var(--app-spacer);
+  text-align: right;
+
+  > :first-child {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .twoColumn,
+  .chapterLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .chapterSidebar {
+    position: static;
+  }
+
+  .chapterSidebar ol {
+    columns: 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .courseNotesButton {
+    bottom: 14px;
+    right: 14px;
+  }
+
+  .notesDrawer {
+    padding: var(--app-spacer);
+    width: 100%;
+  }
+
+  .chapterSidebar ol {
+    columns: 1;
+  }
+
+  .chapterNavigation {
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+  }
+}

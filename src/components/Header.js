@@ -18,7 +18,8 @@ function Header() {
   }, []);
 
   const getActiveLink = (name) => {
-    return router.pathname === name ? `${styles.activeLink} link` : 'link';
+    const isActive = router.pathname === name || router.pathname.startsWith(`${name}/`);
+    return isActive ? `${styles.activeLink} link` : 'link';
   };
 
   const getMenuClass = () => (isMenuVisible ? `${styles.open}` : `${styles.closed}`);
@@ -40,6 +41,9 @@ function Header() {
         <ul className={`${styles.menuItems} ${getMenuClass()}`}>
           <li className={getActiveLink('/blogs')}>
             <Link href="/blogs">Blogs</Link>
+          </li>
+          <li className={getActiveLink('/courses')}>
+            <Link href="/courses">Courses</Link>
           </li>
           <li className={getActiveLink('/demo')}>
             <Link href="/references">Reference</Link>
