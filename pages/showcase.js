@@ -82,10 +82,8 @@ const ProjectCard = ({ project }) => (
     </a>
     <div>
       <h3 className={talkStyles.projectTitle}>
-        <Link href={project.link} passHref>
-          <Link target="_blank" rel="noreferrer noopener">
-            {project.title}
-          </Link>
+        <Link href={project.link} target="_blank" rel="noreferrer noopener">
+          {project.title}
         </Link>
       </h3>
       <div className={talkStyles.tagContainer}>
