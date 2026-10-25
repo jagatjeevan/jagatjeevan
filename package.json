@@ -6,7 +6,7 @@
     "node": "24.22.1"
   },
   "scripts": {
-    "dev": "next dev -p 2222",
+    "dev": "next dev --webpack -p 2222",
     "build": "next build --webpack",
     "start": "next start"
   },

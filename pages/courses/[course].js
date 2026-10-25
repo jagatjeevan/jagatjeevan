@@ -20,8 +20,8 @@ function Course({ course, chapters }) {
       <article className="layout">
         <Header />
         <main className={`${styles.coursePage} app-container`}>
-          <Link href="/courses">
-            <a className={styles.backLink}>&larr; All courses</a>
+          <Link href="/courses" className={styles.backLink}>
+            &larr; All courses
           </Link>
           <header className={styles.courseHeader}>
             <p className={styles.eyebrow}>{course.level}</p>
@@ -71,7 +71,7 @@ function Course({ course, chapters }) {
                   </span>
                   <span className={styles.chapterDetails}>
                     <Link href={`/courses/${course.slug}/${chapter.slug}`}>
-                      <a>{chapter.title}</a>
+                      {chapter.title}
                     </Link>
                     {chapter.description && <small>{chapter.description}</small>}
                   </span>

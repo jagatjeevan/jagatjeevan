@@ -29,7 +29,7 @@ function CourseChapter({ course, chapters, chapter }) {
         <main className={`${styles.coursePage} app-container`}>
           <div className={styles.chapterLinks}>
             <Link href={`/courses/${course.slug}`}>
-              <a>&larr; {course.title} course index</a>
+              &larr; {course.title} course index
             </Link>
             {chapter.tryItUrl && (
               <a
@@ -56,13 +56,12 @@ function CourseChapter({ course, chapters, chapter }) {
               <ol>
                 {chapters.map((item) => (
                   <li key={item.slug}>
-                    <Link href={`/courses/${course.slug}/${item.slug}`}>
-                      <a
-                        aria-current={item.slug === chapter.slug ? 'page' : undefined}
-                        className={item.slug === chapter.slug ? styles.currentChapter : undefined}
-                      >
-                        {item.order}. {item.title}
-                      </a>
+                    <Link
+                      href={`/courses/${course.slug}/${item.slug}`}
+                      aria-current={item.slug === chapter.slug ? 'page' : undefined}
+                      className={item.slug === chapter.slug ? styles.currentChapter : undefined}
+                    >
+                      {item.order}. {item.title}
                     </Link>
                   </li>
                 ))}
@@ -84,14 +83,14 @@ function CourseChapter({ course, chapters, chapter }) {
               <nav className={styles.chapterNavigation} aria-label="Chapter navigation">
                 {previousChapter ? (
                   <Link href={`/courses/${course.slug}/${previousChapter.slug}`}>
-                    <a>&larr; {previousChapter.title}</a>
+                    &larr; {previousChapter.title}
                   </Link>
                 ) : (
                   <span />
                 )}
                 {nextChapter ? (
                   <Link href={`/courses/${course.slug}/${nextChapter.slug}`}>
-                    <a>{nextChapter.title} &rarr;</a>
+                    {nextChapter.title} &rarr;
                   </Link>
                 ) : (
                   <Link href={`/courses/${course.slug}#references`}>Course references &rarr;</Link>

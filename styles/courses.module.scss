@@ -61,13 +61,17 @@
   align-items: flex-start;
 
   h2 {
-    margin: 8px 0;
+    margin: 8px 0 0;
     font-size: 1.4rem;
   }
 
   > a:last-child {
     margin-top: auto;
     padding-top: var(--app-spacer);
+  }
+
+  p {
+    margin-bottom: 0;
   }
 }
 
@@ -245,11 +249,6 @@
 .chapterMain {
   min-width: 0;
   line-height: 1.7;
-
-  h2,
-  h3 {
-    margin-top: 1.6em;
-  }
 
   p,
   li {
