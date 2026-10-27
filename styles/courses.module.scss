@@ -200,9 +200,6 @@
   display: flex;
   gap: var(--app-spacer);
   justify-content: space-between;
-  margin-top: calc(var(--app-spacer) * 1.5);
-  padding-top: var(--app-spacer);
-  border-top: var(--perforated-line);
 
   a {
     align-items: center;
@@ -258,6 +255,10 @@
 
 .markdownContent {
   overflow-wrap: anywhere;
+
+  h2:first-of-type {
+    margin-top: 0;
+  }
 }
 
 .savedHighlight {

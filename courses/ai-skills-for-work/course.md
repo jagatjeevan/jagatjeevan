@@ -1,0 +1,66 @@
+---
+title: 'Practical AI Skills for the Workplace'
+level: 'Beginner to intermediate'
+audience: 'People who want to use AI assistants at work, from individual contributors to technical team leads'
+description: 'Learn to delegate work to AI assistants, provide useful context, connect tools, create reusable workflows, and automate carefully with human oversight.'
+outcomesHeading: 'What you will learn'
+useCasesHeading: 'Where these skills help'
+avoidCasesHeading: 'When to keep the work human-led'
+chaptersHeading: 'Eight practical AI skills'
+referencesHeading: 'References and further reading'
+useCases:
+  - 'Recurring knowledge work with clear inputs, outputs, and review criteria.'
+  - 'Teams that want to share reliable AI procedures rather than repeat setup in separate chats.'
+  - 'Processes where integrations or automation can reduce routine work while keeping people accountable.'
+avoidCases:
+  - 'High-impact decisions that require qualified human judgment or legal accountability.'
+  - 'Tasks involving sensitive data when the AI service, connected tools, or storage are not approved.'
+  - 'Unreviewed actions that send messages, change records, spend money, or publish externally.'
+outcomes:
+  - 'Write a task brief with the goal, context, inputs, output, constraints, and review points.'
+  - 'Organize durable context so an assistant can find relevant, current information without unnecessary access.'
+  - 'Choose an appropriate integration approach and recognize its security and maintenance trade-offs.'
+  - 'Specify outputs with examples, templates, and acceptance criteria.'
+  - 'Build, test, and maintain reusable skills and team-level extensions.'
+  - 'Use coding agents and automation platforms with version control, validation, and human approval.'
+references:
+  - title: 'Supplied YouTube video transcript'
+    url: 'https://www.youtube.com/watch?v=eCn8pZFDMso'
+    description: 'Source for the eight-skill progression. Its future-facing statements are treated as predictions, not verified facts.'
+  - title: 'Agent Skills overview'
+    url: 'https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview'
+    description: 'Anthropic documentation for reusable, modular agent instructions and supporting resources.'
+  - title: 'Skills'
+    url: 'https://developers.openai.com/api/docs/guides/tools-skills'
+    description: 'OpenAI documentation for skills as reusable agent instructions and supporting files.'
+  - title: 'What is the Model Context Protocol (MCP)?'
+    url: 'https://modelcontextprotocol.io/introduction'
+    description: 'Overview of the open protocol for connecting AI applications to external tools and data.'
+  - title: 'Connect Claude Code to tools via MCP'
+    url: 'https://code.claude.com/docs/en/mcp'
+    description: 'Vendor-specific MCP setup and security considerations.'
+  - title: 'Plugins overview'
+    url: 'https://code.claude.com/docs/en/plugins'
+    description: 'Claude Code-specific plugin packaging and component distinctions.'
+  - title: 'Security'
+    url: 'https://code.claude.com/docs/en/security'
+    description: 'Claude Code-specific permission controls, prompt-injection risks, and review responsibilities.'
+  - title: 'About Git'
+    url: 'https://docs.github.com/en/get-started/using-git/about-git'
+    description: 'Git history and collaboration concepts relevant to reviewing agent-authored code.'
+  - title: 'Understand workflows'
+    url: 'https://docs.n8n.io/build/understand-workflows.md'
+    description: 'n8n workflow concepts, triggers, execution, publishing, and management.'
+  - title: 'Create and run workflows'
+    url: 'https://docs.n8n.io/build/understand-workflows/create-and-run-workflows.md'
+    description: 'n8n workflow creation, manual testing, and publishing trigger-based workflows.'
+  - title: 'ChatGPT Projects: add context to guide responses'
+    url: 'https://help.openai.com/en/articles/10169521-projects-in-chatgpt'
+    description: 'A product-specific example of organizing project context and instructions.'
+---
+
+This course turns a supplied video transcript's eight workplace AI skills into a practical learning path. It supplements that source with current official documentation where implementation details are vendor-specific. The transcript also makes predictions about 2026 and 2027; treat those as the speaker's perspective, not guarantees about the future or a description of every product.
+
+You do not need to be a software developer to begin. Start with a repeatable task you understand well. Later chapters introduce Git, integrations, and automation concepts; you can learn those with an engineer when a workflow needs production access or code.
+
+The central habit throughout is to delegate bounded work, give the assistant only appropriate context and permissions, and review consequential results before they are used. Product names and capabilities change quickly, so check the current documentation for the specific tools your organization permits.
