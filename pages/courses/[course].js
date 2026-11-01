@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import Footer from '../../src/components/Footer';
 import Header from '../../src/components/Header';
 import {
@@ -58,7 +59,7 @@ function Course({ course, chapters }) {
           </div>
 
           <section className={styles.courseDescription}>
-            <ReactMarkdown>{course.content}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{course.content}</ReactMarkdown>
           </section>
 
           <section className={styles.chapterIndex}>

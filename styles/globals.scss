@@ -90,6 +90,24 @@ img {
   max-width: 100%;
 }
 
+table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid var(--date-color);
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--code-background);
+}
+
 h1,
 h2,
 h3,

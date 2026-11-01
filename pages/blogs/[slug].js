@@ -4,6 +4,7 @@ import { promises as fsp } from 'fs';
 // import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import matter from 'gray-matter';
+import remarkGfm from 'remark-gfm';
 
 import Header from '../../src/components/Header';
 import Footer from '../../src/components/Footer';
@@ -44,7 +45,7 @@ function Blog(props) {
             </div>
             <Tags data={data.tags} />
           </header>
-          <ReactMarkdown>{content}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
           {/* <div className="razorpay-button-container">
             <p>
               If you feel, it has helped you in learning something today and if you feel to keep me

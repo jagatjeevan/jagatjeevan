@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import Footer from '../../../src/components/Footer';
 import Header from '../../../src/components/Header';
 import HighlightNotes from '../../../src/components/HighlightNotes';
@@ -69,7 +70,7 @@ function CourseChapter({ course, chapters, chapter }) {
             </aside>
             <div className={styles.chapterMain}>
               <HighlightNotes courseSlug={course.slug} chapterSlug={chapter.slug}>
-                <ReactMarkdown>{chapter.content}</ReactMarkdown>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{chapter.content}</ReactMarkdown>
               </HighlightNotes>
               {chapterIndex === chapters.length - 1 && (
                 <p className={styles.finalReferences}>
