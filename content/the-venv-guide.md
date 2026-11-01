@@ -1,5 +1,5 @@
 ---
-title: 'Python Virtual Environments: A Practical Guide to `.venv`'
+title: 'The .venv Guide'
 date: '2026-11-01'
 description: 'Create and use a project-specific Python environment, install dependencies safely, and make the setup easy to recreate.'
 tags: ['python', 'virtual environments']
