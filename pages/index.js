@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import Footer from '../src/components/Footer';
 import Header from '../src/components/Header';
 
@@ -8,36 +9,22 @@ const GetTalent = () => {
   const [index, setIndex] = useState(0);
 
   const talent = [
-    'working on Frontend Development',
-    'making Responsive websites',
-    'photography',
-    'Playing chess',
-    'enhancing to Progressive Web Apps',
-    'blogging',
-    'travelling with friends',
-    'problem solving',
-    'structuring code with Micro-frontend',
-    'eating almost all edibles',
+    'building thoughtful frontend experiences',
+    'making the web more accessible',
+    'exploring micro-frontends',
+    'writing and sharing what I learn',
+    'photography and a good game of chess',
   ];
-
-  const getTalentText = () => {
-    return <span className={styles.talent}>{talent[index]}</span>;
-  };
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if (index === talent.length - 1) {
-        setIndex(0);
-      } else {
-        setIndex(index + 1);
-      }
-      getTalentText();
-    }, 3000);
+      setIndex((currentIndex) => (currentIndex + 1) % talent.length);
+    }, 4000);
     return () => clearInterval(timer);
-  }, [index]);
+  }, [talent.length]);
 
-  return getTalentText();
-};
+  return <span className={styles.talent}>{talent[index]}</span>;
+}
 
 export default function Home() {
   return (
@@ -45,29 +32,54 @@ export default function Home() {
       <Header />
       <section className={`${styles.introContainer} app-container`}>
         <div className={styles.intro}>
-          <p>Hey there!</p>
-          <p>I am Jagat Jeevan.</p>
-          <p>
-            I love <GetTalent />
+          <p className={styles.eyebrow}>Developer · writer · lifelong learner</p>
+          <h1 className={styles.headline}>
+            Hi, I’m <span>Jagat Jeevan.</span>
+          </h1>
+          <p className={styles.summary}>
+            I enjoy <GetTalent /> and turning ideas into clear, useful experiences on the web.
           </p>
-          <p>I am currently working @ThoughtWorks, Bengaluru.</p>
+          <p className={styles.currentRole}>
+            Currently building software at <strong>Thoughtworks</strong> in Bengaluru.
+          </p>
           <ul className={styles.contactLinks}>
             <li>
-              <a href="https://github.com/jagatjeevan" target="_blank">
-                Github
+              <a href="mailto:kanhajeevan@gmail.com" className={styles.primaryLink}>
+                Get in touch
               </a>
             </li>
             <li>
-              <a href="mailto:kanhajeevan@gmail.com">Mail me</a>
+              <Link href="/blogs">Read my writing</Link>
             </li>
             <li>
-              <a href="https://slides.com/kanhajeevan" target="_blank">
-                Blogs in presentation mode
+              <a
+                href="https://github.com/jagatjeevan"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
               </a>
             </li>
           </ul>
         </div>
-        <img src="/profile.jpeg" className={styles.profileImage} />
+        <div className={styles.profileCard}>
+          <img
+            src="/profile.jpeg"
+            className={styles.profileImage}
+            alt="Portrait of Jagat Jeevan"
+            fetchPriority="high"
+          />
+          <div className={styles.profileCaption}>
+            <span>Curious by nature</span>
+            <span>Based in Bengaluru</span>
+          </div>
+        </div>
+      </section>
+      <section className={styles.interests} aria-label="Areas of interest">
+        I’m especially interested in
+        <span>Frontend engineering</span>
+        <span>Web accessibility</span>
+        <span>Developer learning</span>
       </section>
       <Footer />
     </article>

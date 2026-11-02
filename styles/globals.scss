@@ -6,48 +6,66 @@
 @import './razorpay';
 
 :root {
-  // Spacer
-  --app-spacer: 20px;
-  --border-radius: 5px;
+  color-scheme: dark;
 
-  // Colors
-  --page-background-color: #{$page-background-color};
-  --menu-background-color: #212121;
-  --page-text-color: rgb(233, 233, 233);
-  --logo-color: #d8cd41;
-  --link-color: rgb(51, 149, 240);
-  --blog-title-color: orange;
-  --tagline-color: #b99d78;
-  --talent-color: #00ffff;
+  // Layout
+  --app-spacer: 24px;
+  --border-radius: 12px;
+  --content-width: 1120px;
+
+  // Theme
+  --page-background-color: #111a22;
+  --menu-background-color: #17232d;
+  --surface-color: #182630;
+  --surface-raised-color: #1d2e39;
+  --page-text-color: #e8f0f3;
+  --muted-text-color: #a4b4bd;
+  --logo-color: #75d7b4;
+  --accent-color: #75d7b4;
+  --accent-contrast-color: #10251f;
+  --link-color: #87ddc0;
+  --blog-title-color: #f2c879;
+  --tagline-color: #a4b4bd;
+  --talent-color: #75d7b4;
   --code-background: #{$code-background};
   --code-border: #{$code-border-color} solid 1px;
-  --razorpay-banner-bg: #2e3734;
+  --razorpay-banner-bg: #203b36;
+  --border-color: rgba(190, 213, 221, 0.16);
+  --perforated-line: var(--border-color) solid 1px;
 
-  // Border
-  --perforated-line: #545454 dotted 1px;
-
-  // Component
-  --blogpost-background-color: #{$blogpost-background-color};
-  --header-active-link-background: #{$header-active-link-background};
-  --date-color: #{$date-color};
-  --switch-border: #{$date-color} solid 1px;
-  --switch-background: #{$page-background-color};
+  // Existing component tokens
+  --blogpost-background-color: var(--surface-color);
+  --header-active-link-background: var(--surface-raised-color);
+  --date-color: var(--muted-text-color);
+  --switch-border: var(--border-color) solid 1px;
+  --switch-background: var(--surface-color);
 }
 
 body.light-theme {
-  --page-background-color: #e7e7e7;
-  --menu-background-color: #e0e0e0;
-  --page-text-color: #292929;
-  --talent-color: #178383;
-  --blog-title-color: #9f711d;
-  --date-color: #817b7b;
-  --razorpay-banner-bg: #adc5bd;
+  color-scheme: light;
+  --page-background-color: #f4f7f6;
+  --menu-background-color: #ffffff;
+  --surface-color: #ffffff;
+  --surface-raised-color: #eaf3f0;
+  --page-text-color: #21323a;
+  --muted-text-color: #65777e;
+  --logo-color: #19775d;
+  --accent-color: #19775d;
+  --accent-contrast-color: #ffffff;
+  --link-color: #176f59;
+  --blog-title-color: #976414;
+  --tagline-color: #65777e;
+  --talent-color: #19775d;
+  --razorpay-banner-bg: #d9eae4;
+  --border-color: rgba(36, 67, 75, 0.15);
 
-  // Component
-  --switch-background: #e7e7e7;
-  --blogpost-background-color: #d1d1d1;
-  --header-active-link-background: #d1d1d1;
-  --code-background: #d1d1d1;
+  --switch-background: var(--surface-color);
+  --blogpost-background-color: var(--surface-color);
+  --header-active-link-background: var(--surface-raised-color);
+  --code-background: #eaf0ee;
+  --code-border: var(--border-color) solid 1px;
+  --date-color: var(--muted-text-color);
+  --switch-border: var(--border-color) solid 1px;
 }
 
 html,
@@ -56,18 +74,23 @@ body,
   padding: 0;
   margin: 0;
   font-family: 'PT Sans', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   height: 100%;
 }
 
 body {
   background-color: var(--page-background-color);
   color: var(--page-text-color);
+  line-height: 1.6;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 a {
   color: var(--link-color);
   text-decoration: none;
+  transition: color 160ms ease;
   &:hover {
     text-decoration: underline;
   }
@@ -79,11 +102,7 @@ a {
 
 #__next {
   margin: 0 auto;
-  width: 1400px;
-  max-width: 80%;
-  @media screen and (max-width: 900px) {
-    max-width: 95%;
-  }
+  width: min(var(--content-width), calc(100% - 48px));
 }
 
 img {
@@ -112,12 +131,12 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Open Sans Condensed', sans-serif;
-  margin: 50px 0 10px;
+  font-family: 'PT Sans', sans-serif;
+  line-height: 1.2;
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 h2 {
@@ -131,8 +150,8 @@ h3 {
 pre {
   background: var(--code-background);
   border: var(--code-border);
-  padding: var(--app-spacer);
-  border-radius: calc(var(--border-radius) * 2);
+  padding: calc(var(--app-spacer) * 0.75);
+  border-radius: var(--border-radius);
   max-width: 100%;
   overflow: auto;
   font-size: 0.7rem;
@@ -141,8 +160,8 @@ pre {
 code {
   background: var(--code-background);
   color: var(--talent-color);
-  border-radius: calc(var(--border-radius) * 1.5);
-  padding: 5px 10px;
+  border-radius: calc(var(--border-radius) * 0.25);
+  padding: 3px 7px;
   line-height: 1.5em;
   font-size: 0.7rem;
   margin: 0 5px;
@@ -160,7 +179,7 @@ code {
   margin-top: 20px;
   gap: 20px;
   > * {
-    border-bottom: #35bdbd dotted 1px;
+    border-bottom: var(--perforated-line);
   }
 }
 

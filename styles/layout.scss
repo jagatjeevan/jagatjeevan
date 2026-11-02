@@ -5,7 +5,7 @@
 }
 
 .app-container {
-  padding: var(--app-spacer);
+  padding: var(--app-spacer) 0;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
