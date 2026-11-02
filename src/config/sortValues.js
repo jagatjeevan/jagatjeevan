@@ -4,16 +4,24 @@ export const sortValues = {
   oldFirst: 'oldestFirst',
 };
 
-export const sortByAlphabet = (a, b) => (a - b > 1 ? -1 : 1);
+export const sortByAlphabet = (a, b) =>
+  (a.data?.title ?? a.filename ?? '').localeCompare(b.data?.title ?? b.filename ?? '', undefined, {
+    sensitivity: 'base',
+  });
 
-export const sortByLatestDate = (a, b) => {
-  const aDate = new Date(a.data?.date).getTime();
-  const bDate = new Date(b.data?.date).getTime();
-  return aDate - bDate > 1 ? -1 : 1;
+const compareDates = (a, b) => {
+  const aDate = Date.parse(a.createdOn);
+  const bDate = Date.parse(b.createdOn);
+  const aHasDate = Number.isFinite(aDate);
+  const bHasDate = Number.isFinite(bDate);
+
+  if (!aHasDate || !bHasDate) {
+    return aHasDate === bHasDate ? 0 : aHasDate ? -1 : 1;
+  }
+
+  return aDate - bDate;
 };
 
-export const sortByOldestDate = (a, b) => {
-  const aDate = new Date(a.data?.date).getTime();
-  const bDate = new Date(b.data?.date).getTime();
-  return aDate - bDate > 1 ? 1 : -1;
-};
+export const sortByLatestDate = (a, b) => compareDates(b, a);
+
+export const sortByOldestDate = compareDates;

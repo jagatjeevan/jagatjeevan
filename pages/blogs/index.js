@@ -1,7 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 
-import { useState } from 'react';
+import matter from 'gray-matter';
+import { useMemo, useState } from 'react';
 import Footer from '../../src/components/Footer';
 import Header from '../../src/components/Header';
 import BlogTile from '../../src/components/BlogTile';
@@ -14,25 +15,19 @@ import {
   sortValues,
 } from '../../src/config/sortValues';
 
+const sortComparators = {
+  [sortValues.alphabetically]: sortByAlphabet,
+  [sortValues.newFirst]: sortByLatestDate,
+  [sortValues.oldFirst]: sortByOldestDate,
+};
+
 function Blogs(props) {
   const { blogs = [], sortedBy } = props;
-  const [sortedBlogs, setSortedBlogs] = useState(blogs);
   const [sortBy, setSortBy] = useState(sortedBy);
-
-  const handleSort = (e) => {
-    setSortBy(e.target.value);
-    if (e.target.value === sortValues.alphabetically) {
-      setSortedBlogs(sortedBlogs.sort(sortByAlphabet));
-    }
-
-    if (e.target.value === sortValues.newFirst) {
-      setSortedBlogs(sortedBlogs.sort(sortByLatestDate));
-    }
-
-    if (e.target.value === sortValues.oldFirst) {
-      setSortedBlogs(sortedBlogs.sort(sortByOldestDate));
-    }
-  };
+  const sortedBlogs = useMemo(
+    () => [...blogs].sort(sortComparators[sortBy]),
+    [blogs, sortBy],
+  );
 
   if (!blogs.length) return 'No blogs found';
 
@@ -44,15 +39,20 @@ function Blogs(props) {
         <p className={styles.summary}>Total number of posts : {blogs.length}</p>
         <label className={styles.selectSortType}>
           Sort By :
-          <select onChange={handleSort} value={sortBy}>
+          <select onChange={(event) => setSortBy(event.target.value)} value={sortBy}>
             <option value={sortValues.newFirst}>Newest First</option>
-            <option value={sortValues.oldFirst}>Old First</option>
+            <option value={sortValues.oldFirst}>Oldest First</option>
             <option value={sortValues.alphabetically}>Alphabetically</option>
           </select>
         </label>
         <div className={styles.blogsContainer}>
           {sortedBlogs.map((blog) => (
-            <BlogTile blog={blog} key={blog.filename} filename={blog.filename} />
+            <BlogTile
+              blog={blog}
+              key={blog.filename}
+              filename={blog.filename}
+              createdOn={blog.createdOn}
+            />
           ))}
         </div>
       </section>
@@ -70,9 +70,18 @@ export async function getStaticProps() {
   const blogs = filenames.map((filename) => {
     const filePath = path.join(contentDirectory, filename);
     const fileContents = fs.readFileSync(filePath, 'utf8');
+    const { data } = matter(fileContents);
+    const createdOnDate = new Date(data.date);
+
+    if (!Number.isFinite(createdOnDate.getTime())) {
+      throw new Error(`Blog "${filename}" is missing a valid created-on date.`);
+    }
+
     return {
       filename,
       content: fileContents,
+      data,
+      createdOn: createdOnDate.toISOString(),
     };
   });
 

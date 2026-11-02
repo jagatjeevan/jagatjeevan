@@ -1,21 +1,13 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import HamburgMenu from './HamburgMenu';
 import styles from '../../styles/Header.module.scss';
 
 function Header() {
-  const [isMenuVisible, setIsMenuVisible] = useState(true);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
   const router = useRouter();
-
-  useEffect(() => {
-    const height = document.querySelector('#navbar').offsetHeight;
-    const windowWidth = window.innerWidth;
-    if (windowWidth < 800) {
-      document.querySelector('#navbar').setAttribute('style', `height: ${height}px`);
-    }
-  }, []);
 
   const getActiveLink = (name) => {
     const isActive = router.pathname === name || router.pathname.startsWith(`${name}/`);
@@ -37,7 +29,7 @@ function Header() {
       <div className={styles.menuIcon}>
         <HamburgMenu isMenuOpen={isMenuVisible} toggleMenu={setIsMenuVisible} />
       </div>
-      <nav id="navbar" className={`${styles.nav} ${getMenuClass()}`}>
+      <nav id="navbar" aria-label="Main navigation" className={`${styles.nav} ${getMenuClass()}`}>
         <ul className={`${styles.menuItems} ${getMenuClass()}`}>
           <li className={getActiveLink('/blogs')}>
             <Link href="/blogs">Blogs</Link>
@@ -52,7 +44,11 @@ function Header() {
             <Link href="/showcase">Showcase</Link>
           </li>
           <li>
-            <a href="https://jagatjeevan-portfolio.vercel.app" target="_blank">
+            <a
+              href="https://jagatjeevan-portfolio.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+            >
               Resume
             </a>
           </li>

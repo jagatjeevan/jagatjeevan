@@ -6,9 +6,9 @@ import getReadTime from 'read-time';
 import styles from '../../styles/blogPosts.module.scss';
 
 function BlogTile(props) {
-  const { blog = '', filename='' } = props;
+  const { blog = '', filename = '', createdOn } = props;
   const { data, content } = matter(blog);
-  const { title, date, description } = data;
+  const { title, description } = data;
   const filenameWithoutExt = filename.split('.')[0];
 
   return (
@@ -24,8 +24,8 @@ function BlogTile(props) {
         <div className={styles.dateAndReadTime}>
           <div>
             Created on{' : '}
-            <time dateTime={date} value={date} className={styles.createdDate}>
-              {new Date(date).toDateString()}
+            <time dateTime={createdOn} value={createdOn} className={styles.createdDate}>
+              {new Date(createdOn).toDateString()}
             </time>
           </div>
           Read time around : {getReadTime(content).text}

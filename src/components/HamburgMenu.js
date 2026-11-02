@@ -1,24 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import style from '../../styles/HamburgMenu.module.scss';
 
 function HamburgMenu({ isMenuOpen, toggleMenu }) {
   const [isOpen, setIsOpen] = useState(isMenuOpen);
-  const [klass, setKlass] = useState(`${style.navIcon}`);
-
-  useEffect(() => {
-    setKlass(isOpen ? `${style.navIcon} ${style.open}` : `${style.navIcon}`);
-  }, [isOpen]);
 
   return (
-    <div
-      className={klass}
+    <button
+      type="button"
+      className={`${style.navIcon} ${isOpen ? style.open : ''}`}
+      aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+      aria-expanded={isOpen}
       onClick={() => {
-        setIsOpen(!isOpen);
-        toggleMenu(!isOpen);
+        const nextIsOpen = !isOpen;
+        setIsOpen(nextIsOpen);
+        toggleMenu(nextIsOpen);
       }}
     >
       <span />
-    </div>
+    </button>
   );
 }
 

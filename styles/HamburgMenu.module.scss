@@ -6,6 +6,10 @@ $icon-line-height: 3px;
   position: relative;
   width: $icon-size;
   height: $icon-size;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
   overflow: hidden;
   @media screen and (min-width: $menu-breakpoint) {
     display: none;
@@ -16,7 +20,7 @@ $icon-line-height: 3px;
     position: absolute;
     width: 30px;
     height: $icon-line-height;
-    background-color: green;
+    background-color: var(--accent-color);
     transition: 0.5s ease-in-out;
     top: 50%;
     transform: translateY(-50%);
@@ -28,7 +32,7 @@ $icon-line-height: 3px;
       left: 0;
       right: 0;
       height: $icon-line-height;
-      background-color: green;
+      background-color: var(--accent-color);
       transition: 0.5s ease-in-out;
     }
     &::before {
