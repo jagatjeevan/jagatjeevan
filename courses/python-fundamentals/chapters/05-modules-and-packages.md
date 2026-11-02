@@ -1,7 +1,7 @@
 ---
 title: 'Modules and packages'
 order: 5
-description: 'Import standard-library and project code without putting an entire program in one file.'
+description: 'Create a small importable package and understand the import details that help avoid common pitfalls.'
 tryItUrl: 'https://www.programiz.com/python-programming/online-compiler/'
 ---
 
@@ -18,31 +18,58 @@ print(statistics.mean(scores))
 
 This form makes it clear where `mean` comes from. You can import selected names with `from statistics import mean`, but avoid `from module import *` in application code because it can make names unclear.
 
-## Organize your own code
+## Create a custom package
 
-Put reusable definitions in one file and import them in another:
+For a small project, a package is a directory that groups related Python modules. A regular package includes an `__init__.py` file. It can be empty, or it can expose a convenient public interface:
 
 ```text
-project/
+my_project/
     app.py
-    greetings.py
+    greetings/
+        __init__.py
+        messages.py
 ```
 
+Put reusable code in the module:
+
 ```python
-# greetings.py
+# greetings/messages.py
 def greet(name):
     return f"Hello, {name}!"
 ```
+
+The initializer can re-export the function using a package-relative import:
+
+```python
+# greetings/__init__.py
+from .messages import greet
+```
+
+Now code at the project root can import it through the package:
 
 ```python
 # app.py
 from greetings import greet
 
-print(greet("Ada"))
+def main():
+    print(greet("Ada"))
+
+
+if __name__ == "__main__":
+    main()
 ```
 
-A package groups related modules under a package name. Python's import system supports regular packages and namespace packages; for a beginner project, follow the package layout and instructions of the tool or library you are using. Keep importable modules focused and avoid doing unrelated work at import time.
+Run `app.py` from the `my_project` directory with `python app.py`. The `if __name__ == "__main__":` guard means `main()` runs when the file is executed as a script, but not simply because another module imports it. Import statements use package and module names, not filenames with `.py`.
 
-**Exercise:** Create a `math_helpers.py` file with a function that doubles a number. Import and call it from `main.py`.
+## Import details worth remembering
 
-**Sources:** [Python Tutorial: Modules](https://docs.python.org/3/tutorial/modules.html), [LearnPython.org: Modules and Packages](https://www.learnpython.org/en/Modules_and_Packages), [Google’s Python Class: Introduction](https://developers.google.com/edu/python/introduction)
+- When Python imports a module, it executes that module's top-level statements the first time in a process, then reuses the loaded module on later imports. Keep top-level code focused on definitions and setup; put actions such as starting an application inside a function.
+- Python searches configured import locations, including the script directory or current directory in common launch modes. Run this example from the project root so Python can find `greetings`. Avoid naming your files after standard-library modules such as `statistics.py`, which can shadow the real module.
+- A relative import such as `from .messages import greet` is intended for code imported as part of a package. Running `messages.py` directly does not give it the same package context; run the top-level application or use Python's `-m` option for package modules instead.
+- An importable package inside your project is not automatically a distributable project. Sharing or publishing it for installation requires packaging metadata and a build configuration, which the [Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/) covers separately.
+
+The [LearnPython.org module lesson](https://www.learnpython.org/en/Modules_and_Packages) also demonstrates importing project files and the `__main__` guard. Its examples of manually extending `sys.path` or using `PYTHONPATH` are advanced escape hatches, not the normal first choice for organizing a project; prefer a clear project layout and supported package installation.
+
+**Exercise:** Create the `greetings` package above, add a second function in `messages.py`, and import it from `app.py`. Then import `greetings` from a Python interpreter launched in the project root and confirm that importing it does not print the greeting.
+
+**Sources:** [Python Tutorial: Modules](https://docs.python.org/3/tutorial/modules.html), [LearnPython.org: Modules and Packages](https://www.learnpython.org/en/Modules_and_Packages), [Python Packaging User Guide: Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/), [Google’s Python Class: Introduction](https://developers.google.com/edu/python/introduction)
