@@ -24,7 +24,7 @@ const GetTalent = () => {
   }, [talent.length]);
 
   return <span className={styles.talent}>{talent[index]}</span>;
-}
+};
 
 export default function Home() {
   return (
@@ -37,7 +37,8 @@ export default function Home() {
             Hi, I’m <span>Jagat Jeevan.</span>
           </h1>
           <p className={styles.summary}>
-            I enjoy <GetTalent /> and turning ideas into clear, useful experiences on the web.
+            I enjoy <GetTalent /> <br />
+            and turning ideas into clear, useful experiences on the web.
           </p>
           <p className={styles.currentRole}>
             Currently building software at <strong>Thoughtworks</strong> in Bengaluru.
@@ -52,11 +53,7 @@ export default function Home() {
               <Link href="/blogs">Read my writing</Link>
             </li>
             <li>
-              <a
-                href="https://github.com/jagatjeevan"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://github.com/jagatjeevan" target="_blank" rel="noreferrer">
                 GitHub
               </a>
             </li>
