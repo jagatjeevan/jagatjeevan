@@ -1,6 +1,5 @@
 .coursePage {
-  padding-top: calc(var(--app-spacer) * 1.5);
-  padding-bottom: calc(var(--app-spacer) * 2);
+  padding: var(--app-spacer) 0;
 }
 
 .pageHeader,
