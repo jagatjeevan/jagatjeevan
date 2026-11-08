@@ -22,6 +22,8 @@ else:
 
 Comparisons include `==`, `!=`, `<`, `<=`, `>`, and `>=`. Combine conditions with `and`, `or`, and `not`. Python uses indentation to mark blocks, so keep the indentation consistent.
 
+![A decision diagram showing if, elif, and else branches](/courses/python-fundamentals/diagrams/condition-branches.svg)
+
 ## Conditional expression
 
 For a short choice that produces one value, Python has a conditional expression:

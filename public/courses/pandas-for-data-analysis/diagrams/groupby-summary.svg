@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" role="img" aria-labelledby="title description">
+  <title id="title">Pandas groupby split-apply-combine</title>
+  <desc id="description">Rows are split by region, a revenue sum is computed within each group, and one summary row per region is combined into a result.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#536878"/>
+    </marker>
+    <style>
+      .canvas { fill: #f3f6f7; }
+      .node { fill: #fff; stroke: #536878; stroke-width: 2; rx: 14; }
+      .groupA { fill: #e7f6f1; stroke: #27765e; stroke-width: 2; }
+      .groupB { fill: #fff4dc; stroke: #a36800; stroke-width: 2; }
+      .label { font: 600 18px system-ui, sans-serif; fill: #172b3a; text-anchor: middle; }
+      .text { font: 15px system-ui, sans-serif; fill: #344c5d; text-anchor: middle; }
+      .line { fill: none; stroke: #536878; stroke-width: 2.5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect class="canvas" width="960" height="340" rx="20"/>
+  <rect class="node" x="30" y="100" width="250" height="145"/>
+  <text class="label" x="155" y="130">Rows of orders</text>
+  <text class="text" x="155" y="164">west · 10</text>
+  <text class="text" x="155" y="190">east · 7</text>
+  <text class="text" x="155" y="216">west · 15</text>
+
+  <path class="line" d="M280 172 H345"/>
+  <rect class="groupA" x="355" y="80" width="190" height="85"/>
+  <text class="label" x="450" y="116">Group: west</text>
+  <text class="text" x="450" y="143">10 + 15</text>
+  <rect class="groupB" x="355" y="185" width="190" height="85"/>
+  <text class="label" x="450" y="221">Group: east</text>
+  <text class="text" x="450" y="248">7</text>
+
+  <path class="line" d="M545 122 H625 V164"/>
+  <path class="line" d="M545 227 H625 V186"/>
+  <rect class="node" x="635" y="120" width="285" height="115"/>
+  <text class="label" x="777" y="153">Combine summaries</text>
+  <text class="text" x="777" y="185">west → 25</text>
+  <text class="text" x="777" y="211">east → 7</text>
+  <text class="text" x="480" y="312">Split → apply an aggregation → combine results</text>
+</svg>

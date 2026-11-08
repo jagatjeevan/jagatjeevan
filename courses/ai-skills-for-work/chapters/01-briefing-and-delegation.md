@@ -19,6 +19,8 @@ A practical brief answers:
 
 For example: “Using the attached anonymized survey CSV and the question list, draft a one-page summary for the product team. Include three evidence-backed themes and a small table of counts. Do not infer causation. Link each finding to a row range. If categories are ambiguous, list questions instead of guessing. Save a draft only; do not send it.”
 
+![A task brief combines its goal, inputs, context, deliverable, constraints, review points, and stop conditions](/courses/ai-skills-for-work/diagrams/briefing-elements.svg)
+
 ## Bound the task
 
 Large open-ended assignments make it harder to detect missing information. Break them into clear stages: inspect inputs, propose an outline, produce a draft, then revise after review. Specify when to stop and ask. Avoid connecting confidential records or granting action permissions unless the task requires them and your organization permits their use.

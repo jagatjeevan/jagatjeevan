@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-labelledby="title description">
+  <title id="title">A useful task brief</title>
+  <desc id="description">A clear AI task brief brings together the goal, inputs, context, deliverable, constraints, and review points before work begins.</desc>
+  <defs>
+    <style>
+      .canvas { fill: #f3f6f7; }
+      .card { fill: #fff; stroke: #536878; stroke-width: 2; rx: 14; }
+      .center { fill: #e7f6f1; stroke: #27765e; stroke-width: 2; rx: 16; }
+      .title { font: 600 20px system-ui, sans-serif; fill: #172b3a; text-anchor: middle; }
+      .text { font: 16px system-ui, sans-serif; fill: #344c5d; text-anchor: middle; }
+      .line { stroke: #8a9ba6; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect class="canvas" width="960" height="360" rx="20"/>
+  <path class="line" d="M480 180 L180 95 M480 180 L480 75 M480 180 L780 95 M480 180 L180 270 M480 180 L480 285 M480 180 L780 270"/>
+
+  <rect class="card" x="65" y="55" width="230" height="80"/>
+  <text class="title" x="180" y="88">Goal</text>
+  <text class="text" x="180" y="114">What should this achieve?</text>
+
+  <rect class="card" x="365" y="35" width="230" height="80"/>
+  <text class="title" x="480" y="68">Inputs and context</text>
+  <text class="text" x="480" y="94">What information matters?</text>
+
+  <rect class="card" x="665" y="55" width="230" height="80"/>
+  <text class="title" x="780" y="88">Deliverable</text>
+  <text class="text" x="780" y="114">What should be returned?</text>
+
+  <rect class="center" x="350" y="145" width="260" height="70"/>
+  <text class="title" x="480" y="188">Clear task brief</text>
+
+  <rect class="card" x="65" y="230" width="230" height="80"/>
+  <text class="title" x="180" y="263">Constraints</text>
+  <text class="text" x="180" y="289">Sources, scope, exclusions</text>
+
+  <rect class="card" x="365" y="245" width="230" height="80"/>
+  <text class="title" x="480" y="278">Review points</text>
+  <text class="text" x="480" y="304">What needs human checking?</text>
+
+  <rect class="card" x="665" y="230" width="230" height="80"/>
+  <text class="title" x="780" y="263">Stop conditions</text>
+  <text class="text" x="780" y="289">When should it ask first?</text>
+</svg>

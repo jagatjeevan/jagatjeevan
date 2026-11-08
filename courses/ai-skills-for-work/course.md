@@ -64,3 +64,7 @@ This course turns a supplied video transcript's eight workplace AI skills into a
 You do not need to be a software developer to begin. Start with a repeatable task you understand well. Later chapters introduce Git, integrations, and automation concepts; you can learn those with an engineer when a workflow needs production access or code.
 
 The central habit throughout is to delegate bounded work, give the assistant only appropriate context and permissions, and review consequential results before they are used. Product names and capabilities change quickly, so check the current documentation for the specific tools your organization permits.
+
+![Practical AI skills roadmap from task briefing through bounded access and reusable guidance to reviewed automation](/courses/ai-skills-for-work/diagrams/course-roadmap.svg)
+
+This visual summarizes the course progression; the supplied [video transcript](https://www.youtube.com/watch?v=eCn8pZFDMso) motivates its skill sequence.

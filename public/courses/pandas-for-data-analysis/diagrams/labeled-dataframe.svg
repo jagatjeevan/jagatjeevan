@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 390" role="img" aria-labelledby="title description">
+  <title id="title">A labeled pandas DataFrame</title>
+  <desc id="description">A DataFrame is a table with row index labels and named columns. Each column is a Series with values of its own type.</desc>
+  <defs>
+    <style>
+      .canvas { fill: #f3f6f7; }
+      .head { fill: #dcebe6; stroke: #7d9d90; stroke-width: 1.5; }
+      .index { fill: #fff4dc; stroke: #c5a96e; stroke-width: 1.5; }
+      .cell { fill: #fff; stroke: #a6b4bc; stroke-width: 1.5; }
+      .label { font: 600 18px system-ui, sans-serif; fill: #172b3a; text-anchor: middle; }
+      .value { font: 16px system-ui, sans-serif; fill: #344c5d; text-anchor: middle; }
+      .note { font: 16px system-ui, sans-serif; fill: #344c5d; }
+    </style>
+  </defs>
+  <rect class="canvas" width="920" height="390" rx="20"/>
+  <text class="label" x="445" y="42">DataFrame: labeled rows + named columns</text>
+  <rect class="head" x="90" y="75" width="160" height="52"/>
+  <rect class="head" x="250" y="75" width="240" height="52"/>
+  <rect class="head" x="490" y="75" width="240" height="52"/>
+  <text class="label" x="170" y="108">index</text>
+  <text class="label" x="370" y="108">city</text>
+  <text class="label" x="610" y="108">temperature</text>
+
+  <rect class="index" x="90" y="127" width="160" height="55"/><rect class="cell" x="250" y="127" width="240" height="55"/><rect class="cell" x="490" y="127" width="240" height="55"/>
+  <rect class="index" x="90" y="182" width="160" height="55"/><rect class="cell" x="250" y="182" width="240" height="55"/><rect class="cell" x="490" y="182" width="240" height="55"/>
+  <rect class="index" x="90" y="237" width="160" height="55"/><rect class="cell" x="250" y="237" width="240" height="55"/><rect class="cell" x="490" y="237" width="240" height="55"/>
+  <text class="value" x="170" y="161">row 0</text><text class="value" x="370" y="161">Oslo</text><text class="value" x="610" y="161">18.5</text>
+  <text class="value" x="170" y="216">row 1</text><text class="value" x="370" y="216">Lima</text><text class="value" x="610" y="216">24.0</text>
+  <text class="value" x="170" y="271">row 2</text><text class="value" x="370" y="271">Oslo</text><text class="value" x="610" y="271">20.1</text>
+
+  <path d="M370 310 V340 H300" fill="none" stroke="#536878" stroke-width="2"/>
+  <path d="M610 310 V340 H680" fill="none" stroke="#536878" stroke-width="2"/>
+  <text class="note" x="85" y="368">Row labels identify observations</text>
+  <text class="note" x="510" y="368">Each column is a labeled Series</text>
+</svg>

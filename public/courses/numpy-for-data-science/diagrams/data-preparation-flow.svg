@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 260" role="img" aria-labelledby="title description">
+  <title id="title">A NumPy data preparation workflow</title>
+  <desc id="description">A practical array workflow checks shape and type, selects and cleans observations, applies vectorized transformations, then summarizes and validates results.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#536878"/>
+    </marker>
+    <style>
+      .canvas { fill: #f3f6f7; }
+      .node { fill: #fff; stroke: #536878; stroke-width: 2; rx: 14; }
+      .accent { fill: #e7f6f1; stroke: #27765e; stroke-width: 2; rx: 14; }
+      .title { font: 600 18px system-ui, sans-serif; fill: #172b3a; text-anchor: middle; }
+      .text { font: 15px system-ui, sans-serif; fill: #344c5d; text-anchor: middle; }
+      .line { stroke: #536878; stroke-width: 2.5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect class="canvas" width="980" height="260" rx="20"/>
+  <rect class="node" x="25" y="75" width="165" height="105"/>
+  <text class="title" x="107" y="116">Array data</text>
+  <text class="text" x="107" y="144">observations × features</text>
+
+  <rect class="node" x="225" y="75" width="165" height="105"/>
+  <text class="title" x="307" y="116">Inspect</text>
+  <text class="text" x="307" y="144">shape • dtype • missing</text>
+
+  <rect class="node" x="425" y="75" width="165" height="105"/>
+  <text class="title" x="507" y="116">Select and clean</text>
+  <text class="text" x="507" y="144">mask the intended rows</text>
+
+  <rect class="accent" x="625" y="75" width="165" height="105"/>
+  <text class="title" x="707" y="116">Transform</text>
+  <text class="text" x="707" y="144">vectorize and broadcast</text>
+
+  <rect class="node" x="825" y="75" width="130" height="105"/>
+  <text class="title" x="890" y="116">Summarize</text>
+  <text class="text" x="890" y="144">check outputs</text>
+
+  <path class="line" d="M190 127 H217"/>
+  <path class="line" d="M390 127 H417"/>
+  <path class="line" d="M590 127 H617"/>
+  <path class="line" d="M790 127 H817"/>
+  <text class="text" x="490" y="220">At every step, check that the resulting shape matches the question.</text>
+</svg>

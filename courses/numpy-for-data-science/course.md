@@ -73,3 +73,7 @@ references:
 This course is a NumPy module in a data-science learning roadmap. It assumes you can read basic Python, including lists, functions, and `for` loops. Install NumPy in your Python environment with `python -m pip install numpy`, then run each example in a script, REPL, or notebook.
 
 The chapters use the conventional `import numpy as np`. Work through them in order: data science workflows depend on understanding an array's shape, selecting the intended observations, and checking calculations before moving on to higher-level libraries. Examples use APIs documented in the current NumPy stable documentation; consult that documentation for details that may vary by version.
+
+![A NumPy data workflow from inspecting array shape and type through selection, transformation, and summary](/courses/numpy-for-data-science/diagrams/data-preparation-flow.svg)
+
+The workflow image summarizes the chapter progression; the [official NumPy quickstart](https://numpy.org/doc/stable/user/quickstart.html) covers array structure, shape, and operations.

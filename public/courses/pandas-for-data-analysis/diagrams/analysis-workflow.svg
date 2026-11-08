@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 270" role="img" aria-labelledby="title description">
+  <title id="title">A pandas analysis workflow</title>
+  <desc id="description">A tabular analysis reads data, inspects its structure, selects and cleans records, transforms and groups values, then validates and communicates a result.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#536878"/>
+    </marker>
+    <style>
+      .canvas { fill: #f3f6f7; }
+      .node { fill: #fff; stroke: #536878; stroke-width: 2; rx: 14; }
+      .accent { fill: #e7f6f1; stroke: #27765e; stroke-width: 2; rx: 14; }
+      .label { font: 600 18px system-ui, sans-serif; fill: #172b3a; text-anchor: middle; }
+      .text { font: 15px system-ui, sans-serif; fill: #344c5d; text-anchor: middle; }
+      .line { stroke: #536878; stroke-width: 2.5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect class="canvas" width="980" height="270" rx="20"/>
+  <rect class="node" x="20" y="76" width="150" height="100"/>
+  <text class="label" x="95" y="116">Read</text>
+  <text class="text" x="95" y="145">CSV / table</text>
+  <rect class="node" x="210" y="76" width="150" height="100"/>
+  <text class="label" x="285" y="116">Inspect</text>
+  <text class="text" x="285" y="145">shape / types</text>
+  <rect class="node" x="400" y="76" width="150" height="100"/>
+  <text class="label" x="475" y="116">Select &amp; clean</text>
+  <text class="text" x="475" y="145">rows / missing</text>
+  <rect class="accent" x="590" y="76" width="150" height="100"/>
+  <text class="label" x="665" y="116">Transform</text>
+  <text class="text" x="665" y="145">derive / group</text>
+  <rect class="node" x="780" y="76" width="180" height="100"/>
+  <text class="label" x="870" y="116">Validate &amp; share</text>
+  <text class="text" x="870" y="145">check / explain</text>
+  <path class="line" d="M170 126 H202"/>
+  <path class="line" d="M360 126 H392"/>
+  <path class="line" d="M550 126 H582"/>
+  <path class="line" d="M740 126 H772"/>
+  <text class="text" x="490" y="225">Keep the data decisions visible so results can be interpreted and checked.</text>
+</svg>

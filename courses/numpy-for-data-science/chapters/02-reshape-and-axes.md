@@ -47,6 +47,8 @@ print(scores.sum())         # all values reduced to one number
 
 Before calling a reduction, say what one output should represent. If the result should be one value per feature, inspect `shape` and choose the axis that reduces the observations.
 
+![A three-by-four array with observations as rows and features as columns, showing the results of reducing each axis](/courses/numpy-for-data-science/diagrams/array-axes.svg)
+
 `reshape` may return a view when the data layout allows it or a copy otherwise. Do not rely on it always copying or always sharing storage; use `.copy()` when independent data is required.
 
 **Exercise:** Make an array of 24 values shaped `(4, 6)`. Calculate the sum for each row and each column, and explain the shape of both results.

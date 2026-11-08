@@ -38,6 +38,10 @@ function NameForm() {
 
 Use a real `<form>` and handle its `onSubmit` for form submission. Validate user input, communicate errors in text, and use labels so controls are usable with assistive technology.
 
+![A user event flows through a handler and state update to a new React render](/courses/react-basics-to-advanced/diagrams/state-update-cycle.svg)
+
 ## Exercise
 
 Build a short task list. Add a task through a form, clear the input after submission, and remove a task by its stable ID. Keep the array immutable when adding or removing items.
+
+**Sources:** [State: A Component's Memory](https://react.dev/learn/state-a-components-memory), [Responding to Events](https://react.dev/learn/responding-to-events)

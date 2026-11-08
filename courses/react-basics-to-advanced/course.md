@@ -52,3 +52,7 @@ Work through the chapters in order, try the examples in your own editor, and ada
 You should know JavaScript functions, arrays, objects, modules, and basic HTML before starting. TypeScript is useful but not required; examples use JavaScript so the React concepts stay in focus.
 
 The course introduces core React before discussing libraries and production choices. It does not prescribe one framework, state library, or project structure for every application. Check the current official documentation when working with a specific React version.
+
+![React learning path from describing UI to interaction, data, testing, and production decisions](/courses/react-basics-to-advanced/diagrams/course-roadmap.svg)
+
+The roadmap summarizes the progression in this course and the official [React learning guide](https://react.dev/learn).

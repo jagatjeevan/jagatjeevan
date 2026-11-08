@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 310" role="img" aria-labelledby="title description">
+  <title id="title">React state update cycle</title>
+  <desc id="description">A user event calls a handler, the handler requests a state update, React renders from the new state, and the updated interface can receive another event.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#536878"/>
+    </marker>
+    <style>
+      .canvas { fill: #f3f6f7; }
+      .node { fill: #fff; stroke: #536878; stroke-width: 2; rx: 14; }
+      .state { fill: #e7f6f1; stroke: #27765e; stroke-width: 2; rx: 14; }
+      .label { font: 600 19px system-ui, sans-serif; fill: #172b3a; text-anchor: middle; }
+      .small { font: 15px system-ui, sans-serif; fill: #344c5d; text-anchor: middle; }
+      .line { fill: none; stroke: #536878; stroke-width: 2.5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect class="canvas" width="960" height="310" rx="20"/>
+  <rect class="node" x="40" y="100" width="160" height="90"/>
+  <text class="label" x="120" y="137">User event</text>
+  <text class="small" x="120" y="164">click / input</text>
+
+  <rect class="node" x="245" y="100" width="160" height="90"/>
+  <text class="label" x="325" y="137">Event handler</text>
+  <text class="small" x="325" y="164">runs your code</text>
+
+  <rect class="state" x="450" y="100" width="160" height="90"/>
+  <text class="label" x="530" y="137">State setter</text>
+  <text class="small" x="530" y="164">requests update</text>
+
+  <rect class="node" x="655" y="100" width="130" height="90"/>
+  <text class="label" x="720" y="137">Render</text>
+  <text class="small" x="720" y="164">new UI output</text>
+
+  <rect class="node" x="830" y="100" width="100" height="90"/>
+  <text class="label" x="880" y="137">UI</text>
+  <text class="small" x="880" y="164">updated</text>
+
+  <path class="line" d="M200 145 H237"/>
+  <path class="line" d="M405 145 H442"/>
+  <path class="line" d="M610 145 H647"/>
+  <path class="line" d="M785 145 H822"/>
+  <path class="line" d="M880 195 V255 H120 V198"/>
+  <text class="small" x="500" y="282">The next user event starts another update cycle</text>
+</svg>

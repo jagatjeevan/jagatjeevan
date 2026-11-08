@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" role="img" aria-labelledby="title description">
+  <title id="title">Array axes and reductions</title>
+  <desc id="description">A three-row by four-column array has observations as rows and features as columns. Reducing axis zero leaves one result per feature; reducing axis one leaves one result per observation.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#536878"/>
+    </marker>
+    <style>
+      .canvas { fill: #f3f6f7; }
+      .cell { fill: #fff; stroke: #a6b4bc; stroke-width: 1.5; }
+      .head { fill: #dcebe6; stroke: #7d9d90; stroke-width: 1.5; }
+      .label { font: 600 18px system-ui, sans-serif; fill: #172b3a; text-anchor: middle; }
+      .value { font: 17px system-ui, sans-serif; fill: #344c5d; text-anchor: middle; }
+      .line { fill: none; stroke: #536878; stroke-width: 2.5; marker-end: url(#arrow); }
+      .hint { font: 15px system-ui, sans-serif; fill: #344c5d; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="canvas" width="900" height="390" rx="20"/>
+  <text class="label" x="435" y="42">Columns are features</text>
+  <text class="hint" x="435" y="65">axis 0 ↓ reduces observations</text>
+
+  <rect class="head" x="165" y="85" width="100" height="42"/>
+  <rect class="head" x="265" y="85" width="100" height="42"/>
+  <rect class="head" x="365" y="85" width="100" height="42"/>
+  <rect class="head" x="465" y="85" width="100" height="42"/>
+  <text class="value" x="215" y="113">F1</text>
+  <text class="value" x="315" y="113">F2</text>
+  <text class="value" x="415" y="113">F3</text>
+  <text class="value" x="515" y="113">F4</text>
+
+  <text class="hint" x="85" y="164">obs 1</text>
+  <text class="hint" x="85" y="214">obs 2</text>
+  <text class="hint" x="85" y="264">obs 3</text>
+  <g>
+    <rect class="cell" x="165" y="127" width="100" height="50"/><rect class="cell" x="265" y="127" width="100" height="50"/><rect class="cell" x="365" y="127" width="100" height="50"/><rect class="cell" x="465" y="127" width="100" height="50"/>
+    <rect class="cell" x="165" y="177" width="100" height="50"/><rect class="cell" x="265" y="177" width="100" height="50"/><rect class="cell" x="365" y="177" width="100" height="50"/><rect class="cell" x="465" y="177" width="100" height="50"/>
+    <rect class="cell" x="165" y="227" width="100" height="50"/><rect class="cell" x="265" y="227" width="100" height="50"/><rect class="cell" x="365" y="227" width="100" height="50"/><rect class="cell" x="465" y="227" width="100" height="50"/>
+    <text class="value" x="215" y="159">1</text><text class="value" x="315" y="159">2</text><text class="value" x="415" y="159">3</text><text class="value" x="515" y="159">4</text>
+    <text class="value" x="215" y="209">5</text><text class="value" x="315" y="209">6</text><text class="value" x="415" y="209">7</text><text class="value" x="515" y="209">8</text>
+    <text class="value" x="215" y="259">9</text><text class="value" x="315" y="259">10</text><text class="value" x="415" y="259">11</text><text class="value" x="515" y="259">12</text>
+  </g>
+  <text class="hint" x="365" y="315">Rows are observations</text>
+  <path class="line" d="M585 152 H700"/>
+  <text class="label" x="785" y="145">axis 0</text>
+  <text class="hint" x="785" y="169">one result per</text>
+  <text class="hint" x="785" y="190">feature</text>
+  <path class="line" d="M165 295 V345 H650"/>
+  <text class="hint" x="770" y="350">axis 1 → one result per observation</text>
+</svg>

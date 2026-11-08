@@ -82,3 +82,7 @@ Work through the chapters in order. Run each example in a Python 3 interpreter o
 This course begins with a quick-reference chapter, then builds up from expressions and errors to control flow, collections, and reusable code. It finishes with development setup, file I/O, and basic quality checks. Google’s Python Class is designed for learners with some programming experience; this course introduces those ideas more gradually.
 
 Examples use Python 3. Check the official documentation when you need details for the version installed on your computer. The mnemonics BODMAS and PEMDAS are informal memory aids; follow Python's documented operator precedence, especially when operators share the same precedence.
+
+![Python course roadmap from expressions and collections through reusable code, files, tests, and linting](/courses/python-fundamentals/diagrams/course-roadmap.svg)
+
+The roadmap follows the topics in this course and the [Python Tutorial](https://docs.python.org/3/tutorial/).
