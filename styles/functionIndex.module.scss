@@ -1,0 +1,348 @@
+.functionIndex {
+  margin-top: 24px;
+}
+
+.searchPanel {
+  position: sticky;
+  top: 84px;
+  z-index: 5;
+  margin-bottom: 34px;
+  padding: 18px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: var(--page-background-color);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+
+  > p {
+    margin: 8px 0 0;
+    color: var(--muted-text-color);
+    font-size: 0.78rem;
+  }
+}
+
+.searchInputWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  background: var(--surface-color);
+  color: var(--muted-text-color);
+
+  &:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 20%, transparent);
+  }
+
+  i {
+    font-size: 0.9rem;
+  }
+
+  input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--page-text-color);
+    font: inherit;
+
+    &::placeholder {
+      color: var(--muted-text-color);
+      opacity: 0.8;
+    }
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+
+  button,
+  button:hover {
+    flex: 0 0 auto;
+    padding: 5px 8px;
+    border: 0;
+    background: transparent;
+    color: var(--accent-color);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.8rem;
+  }
+}
+
+.categorySection {
+  margin-bottom: 44px;
+  scroll-margin-top: 130px;
+}
+
+.categoryNavigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: -16px 0 32px;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    color: var(--muted-text-color);
+    font-size: 0.78rem;
+
+    span {
+      color: var(--accent-color);
+      font-size: 0.72rem;
+    }
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--accent-color);
+      color: var(--page-text-color);
+      text-decoration: none;
+    }
+  }
+}
+
+.categoryHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+
+  h2 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+
+  p {
+    margin: 4px 0 0;
+    color: var(--muted-text-color);
+    font-size: 0.87rem;
+  }
+
+  > span {
+    display: grid;
+    min-width: 32px;
+    height: 32px;
+    place-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    color: var(--muted-text-color);
+    font-size: 0.78rem;
+  }
+}
+
+.functionList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 10px;
+}
+
+.functionCard {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--surface-color);
+  transition:
+    border-color 150ms ease,
+    background-color 150ms ease;
+
+  &[open] {
+    grid-column: 1 / -1;
+    border-color: color-mix(in srgb, var(--accent-color) 60%, var(--border-color));
+  }
+
+  summary {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    min-height: 112px;
+    padding: 15px;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover .expandIcon,
+    &:focus-visible .expandIcon {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+  }
+}
+
+.functionCardHeading {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+
+  strong {
+    color: var(--accent-color);
+    font-size: 1rem;
+  }
+
+  code {
+    width: fit-content;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    padding: 2px 6px;
+    margin: 0;
+    font-size: 0.68rem;
+  }
+
+  > span {
+    color: var(--muted-text-color);
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+}
+
+.expandIcon {
+  display: grid;
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--muted-text-color);
+  font-size: 1.1rem;
+  line-height: 1;
+  transition:
+    border-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+
+  .functionCard[open] & {
+    transform: rotate(45deg);
+  }
+}
+
+.functionDetails {
+  padding: 0 15px 16px;
+  animation: reveal 160ms ease-out;
+
+  p {
+    margin: 0 0 14px;
+    color: var(--page-text-color);
+    font-size: 0.9rem;
+  }
+
+  pre {
+    margin: 6px 0 10px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: 0.76rem;
+
+    code {
+      padding: 0;
+      margin: 0;
+      background: transparent;
+      color: var(--page-text-color);
+      font-family: var(--font-monospace, monospace);
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+  }
+
+  > a {
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+}
+
+.exampleLabel {
+  color: var(--muted-text-color);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.emptyState {
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--border-radius);
+  text-align: center;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  p {
+    color: var(--muted-text-color);
+  }
+
+  button {
+    padding: 9px 14px;
+    border: 1px solid var(--accent-color);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--accent-color);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .searchPanel {
+    top: 76px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .functionList {
+    grid-template-columns: 1fr;
+  }
+
+  .functionCard[open] {
+    grid-column: auto;
+  }
+
+  .searchPanel {
+    padding: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .categorySidebar a,
+  .searchInputWrap,
+  .functionCard,
+  .expandIcon {
+    transition: none;
+  }
+
+  .functionDetails {
+    animation: none;
+  }
+}

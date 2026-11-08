@@ -1,0 +1,128 @@
+const reactFunctionCategories = [
+  {
+    id: 'components',
+    title: 'Components and composition',
+    description: 'Compose UI from built-in React components and reusable functions.',
+    functions: [
+      {
+        name: 'Fragment',
+        signature: '<Fragment>...</Fragment>  |  <>...</>',
+        description: 'Group sibling elements without adding a DOM wrapper.',
+        details: 'Use the explicit Fragment form when a list needs a key on the group.',
+        example: 'import { Fragment } from "react";\n\nfunction Names({ people }) {\n  return people.map((person) => (\n    <Fragment key={person.id}><h2>{person.name}</h2><hr /></Fragment>\n  ));\n}',
+        url: 'https://react.dev/reference/react/Fragment',
+      },
+      {
+        name: 'memo',
+        signature: 'memo(Component, arePropsEqual?)',
+        description: 'Skip some re-renders when props have not changed.',
+        details: 'Treat memo as a performance optimization, not a correctness requirement. Measure before adding it.',
+        example: 'import { memo } from "react";\n\nconst Greeting = memo(function Greeting({ name }) {\n  return <h2>Hello, {name}</h2>;\n});',
+        url: 'https://react.dev/reference/react/memo',
+      },
+      {
+        name: 'lazy / Suspense',
+        signature: 'lazy(load)  |  <Suspense fallback={...}>',
+        description: 'Load a component on demand and show fallback UI while it loads.',
+        details: 'Define lazy components outside other components and place them beneath a Suspense boundary.',
+        example: 'import { lazy, Suspense } from "react";\n\nconst Reports = lazy(() => import("./Reports"));\nfunction App() {\n  return <Suspense fallback={<p>Loading…</p>}><Reports /></Suspense>;\n}',
+        url: 'https://react.dev/reference/react/lazy',
+      },
+    ],
+  },
+  {
+    id: 'hooks-state',
+    title: 'Hooks and state',
+    description: 'Store component state and share values with React hooks.',
+    functions: [
+      {
+        name: 'useState',
+        signature: 'useState(initialState)',
+        description: 'Add a state variable to a function component.',
+        details: 'The setter schedules a render. When the next value depends on the previous one, use the updater form.',
+        example: 'import { useState } from "react";\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n  return <button onClick={() => setCount((value) => value + 1)}>{count}</button>;\n}',
+        url: 'https://react.dev/reference/react/useState',
+      },
+      {
+        name: 'useReducer',
+        signature: 'useReducer(reducer, initialState)',
+        description: 'Manage related state updates with a reducer function.',
+        details: 'A reducer receives the current state and an action, then returns the next state.',
+        example: 'import { useReducer } from "react";\n\nfunction reducer(state, action) {\n  if (action.type === "increment") return { count: state.count + 1 };\n  return state;\n}\nconst [state, dispatch] = useReducer(reducer, { count: 0 });',
+        url: 'https://react.dev/reference/react/useReducer',
+      },
+      {
+        name: 'createContext / useContext',
+        signature: 'createContext(defaultValue)  |  useContext(Context)',
+        description: 'Provide and read a value across a component subtree.',
+        details: 'Context is useful for values needed by distant components. It does not replace local state or every prop.',
+        example: 'import { createContext, useContext } from "react";\n\nconst ThemeContext = createContext("light");\nfunction Label() {\n  const theme = useContext(ThemeContext);\n  return <span className={theme}>Status</span>;\n}',
+        url: 'https://react.dev/reference/react/useContext',
+      },
+      {
+        name: 'useRef',
+        signature: 'useRef(initialValue)',
+        description: 'Keep a mutable value that does not trigger a render when changed.',
+        details: 'Commonly used to reference a DOM node or retain a value between renders that is not part of the visible UI.',
+        example: 'import { useRef } from "react";\n\nfunction SearchBox() {\n  const inputRef = useRef(null);\n  return <input ref={inputRef} />;\n}',
+        url: 'https://react.dev/reference/react/useRef',
+      },
+    ],
+  },
+  {
+    id: 'effects-events',
+    title: 'Effects and events',
+    description: 'Respond to user actions and synchronize with external systems.',
+    functions: [
+      {
+        name: 'useEffect',
+        signature: 'useEffect(setup, dependencies?)',
+        description: 'Synchronize a component with an external system.',
+        details: 'Use effects for subscriptions, browser APIs, and other external synchronization—not to derive values that can be calculated during render.',
+        example: 'import { useEffect } from "react";\n\nuseEffect(() => {\n  const connection = createConnection(serverUrl);\n  connection.connect();\n  return () => connection.disconnect();\n}, [serverUrl]);',
+        url: 'https://react.dev/reference/react/useEffect',
+      },
+      {
+        name: 'useId',
+        signature: 'useId()',
+        description: 'Generate an ID for accessibility relationships.',
+        details: 'Useful for matching a label with its input. Do not use it to create list keys.',
+        example: 'import { useId } from "react";\n\nfunction EmailField() {\n  const id = useId();\n  return <><label htmlFor={id}>Email</label><input id={id} /></>;\n}',
+        url: 'https://react.dev/reference/react/useId',
+      },
+      {
+        name: 'startTransition / useTransition',
+        signature: 'startTransition(action)  |  useTransition()',
+        description: 'Mark non-urgent UI updates as transitions.',
+        details: 'Keep urgent interactions such as typing responsive while React works on a lower-priority update.',
+        example: 'import { startTransition, useState } from "react";\n\nfunction TabButton() {\n  const [tab, setTab] = useState("home");\n  function selectTab(nextTab) {\n    startTransition(() => setTab(nextTab));\n  }\n  return <button onClick={() => selectTab("reports")}>{tab}</button>;\n}',
+        url: 'https://react.dev/reference/react/startTransition',
+      },
+    ],
+  },
+  {
+    id: 'performance',
+    title: 'Performance helpers',
+    description: 'Cache calculations or callback identities when profiling shows a need.',
+    functions: [
+      {
+        name: 'useMemo',
+        signature: 'useMemo(calculateValue, dependencies)',
+        description: 'Cache a calculation result between renders.',
+        details: 'Use for measured expensive calculations or when a stable value is needed by a memoized child. React Compiler may reduce the need for manual memoization.',
+        example: 'import { useMemo } from "react";\n\nconst visibleItems = useMemo(\n  () => filterItems(items, query),\n  [items, query],\n);',
+        url: 'https://react.dev/reference/react/useMemo',
+      },
+      {
+        name: 'useCallback',
+        signature: 'useCallback(fn, dependencies)',
+        description: 'Cache a function definition between renders.',
+        details: 'Most useful when passing a callback to an optimized child or using it as a dependency in another hook.',
+        example: 'import { useCallback } from "react";\n\nconst handleSave = useCallback(() => {\n  saveDocument(documentId);\n}, [documentId]);',
+        url: 'https://react.dev/reference/react/useCallback',
+      },
+    ],
+  },
+];
+
+export default reactFunctionCategories;

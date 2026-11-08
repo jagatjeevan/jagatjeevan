@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm';
 import Footer from '../../../src/components/Footer';
 import Header from '../../../src/components/Header';
 import HighlightNotes from '../../../src/components/HighlightNotes';
+import FunctionIndex from '../../../src/components/FunctionIndex';
 import {
   getCourseChapters,
   getCourseOverview,
@@ -103,7 +104,10 @@ function CourseChapter({ course, chapters, chapter }) {
             </aside>
             <div className={styles.chapterMain}>
               <HighlightNotes courseSlug={course.slug} chapterSlug={chapter.slug}>
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{chapter.content}</ReactMarkdown>
+                <>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{chapter.content}</ReactMarkdown>
+                  {chapter.functionIndex && <FunctionIndex courseSlug={course.slug} />}
+                </>
               </HighlightNotes>
               {chapterIndex === chapters.length - 1 && (
                 <p className={styles.finalReferences}>
