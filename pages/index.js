@@ -72,12 +72,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className={styles.interests} aria-label="Areas of interest">
-        I’m especially interested in
-        <span>Frontend engineering</span>
-        <span>Web accessibility</span>
-        <span>Developer learning</span>
-      </section>
       <Footer />
     </article>
   );

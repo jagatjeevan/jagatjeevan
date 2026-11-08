@@ -117,7 +117,7 @@
 
 .profileCard {
   position: relative;
-  width: min(100%, 350px);
+  width: min(100%, 280px);
   justify-self: center;
   padding: 14px;
   border: 1px solid var(--border-color);
@@ -149,29 +149,6 @@
   }
 }
 
-.interests {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  width: min(100%, 980px);
-  margin: 0 auto 60px;
-  padding: 18px 22px;
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  background: var(--surface-color);
-  color: var(--muted-text-color);
-  font-size: 0.82rem;
-
-  span {
-    padding: 5px 12px;
-    border-radius: 999px;
-    background: var(--surface-raised-color);
-    color: var(--page-text-color);
-  }
-}
-
 @media screen and (max-width: 760px) {
   .introContainer {
     grid-template-columns: 1fr;
@@ -185,10 +162,6 @@
 
   .profileCard::after {
     inset: 18px -16px -16px 18px;
-  }
-
-  .interests {
-    margin-bottom: 36px;
   }
 }
 
