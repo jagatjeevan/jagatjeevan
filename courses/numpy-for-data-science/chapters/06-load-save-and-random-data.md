@@ -44,7 +44,7 @@ Avoid object arrays and leave `allow_pickle=False` unless there is a specific tr
 
 ## Make random examples reproducible
 
-Create a `Generator` with `default_rng`. Supplying the same seed lets an example or experiment repeat its random sequence:
+Create a `Generator` with `default_rng`. The generator methods shown here are the modern equivalents of common random-sampling examples; supplying the same seed lets an example or experiment repeat its random sequence:
 
 ```python
 rng = np.random.default_rng(42)
@@ -54,6 +54,15 @@ print(sample)
 synthetic_measurements = rng.normal(loc=20.0, scale=2.0, size=(4, 3))
 print(synthetic_measurements.shape)  # (4, 3)
 ```
+
+Random sampling quick reference:
+
+- `rng.random(size)`: draw uniform values in `[0, 1)`.
+- `rng.standard_normal(size)`: draw from a normal distribution with mean 0 and standard deviation 1; values are not restricted to `[-1, 1]`.
+- `rng.integers(low, high, size)`: draw integers from `low` up to, but not including, `high`.
+- `rng.normal(loc, scale, size)`: draw from a normal distribution with the given mean and standard deviation.
+
+Older examples may use `np.random.rand`, `np.random.randn`, and `np.random.randint`; prefer a seeded `Generator` for new code.
 
 Use an explicit seed in examples and tests when repeatability matters. NumPy's random generators are for simulation and statistical sampling, not cryptographic secrets.
 

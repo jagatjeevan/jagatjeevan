@@ -24,6 +24,14 @@ print(np.sqrt(values))       # [1. 2. 3.]
 print(np.isfinite(values))   # [ True  True  True]
 ```
 
+Common element-wise functions:
+
+- `np.add`, `np.subtract`, `np.multiply`, `np.divide`: arithmetic counterparts of `+`, `-`, `*`, `/`.
+- `np.mod`, `np.power`: counterparts of `%` and `**`.
+- `np.reciprocal`: element-wise reciprocals; use a floating dtype when fractional results are expected.
+- `np.square`, `np.sqrt`: square and square-root each value.
+- `np.sin`, `np.cos`: trigonometric functions; inputs are in radians.
+
 For numeric arrays, `*` means element-wise multiplication, not matrix multiplication:
 
 ```python
@@ -60,4 +68,4 @@ If two dimensions differ and neither is one, NumPy raises a `ValueError`. Print 
 
 **Exercise:** Convert a `(3, 4)` table from meters to centimeters with one array expression. Then add a four-element per-feature offset. Try an incompatible shape and explain the error.
 
-**Sources:** [Universal functions](https://numpy.org/doc/stable/user/basics.ufuncs.html), [Broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html)
+**Sources:** [Universal functions](https://numpy.org/doc/stable/user/basics.ufuncs.html), [Mathematical functions](https://numpy.org/doc/stable/reference/routines.math.html), [Broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html)

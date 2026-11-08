@@ -16,6 +16,14 @@ print(np.max(measurements, axis=1))   # maximum per observation
 print(np.std(measurements, axis=0))   # standard deviation per column
 ```
 
+Common reduction functions:
+
+- `np.min`, `np.max`, `np.sum`: reduce values to a minimum, maximum, or total.
+- `np.argmin`, `np.argmax`: return the positions of the minimum and maximum.
+- `np.cumsum`: return cumulative sums in traversal order.
+
+Each accepts an `axis` argument to operate along one dimension. For example, `np.cumsum(values)` returns a running total, while `np.cumsum(table, axis=0)` runs down each column.
+
 With `axis=None` (the default), a reduction combines all elements:
 
 ```python
@@ -63,4 +71,4 @@ If a feature has zero standard deviation, division by zero needs an explicit pol
 
 **Exercise:** Put one `np.nan` into a column of a small table. Compare `mean` and `nanmean`, count the missing values with `np.isnan`, and report a median alongside the mean.
 
-**Sources:** [NumPy statistics routines](https://numpy.org/doc/stable/reference/routines.statistics.html), [numpy.mean](https://numpy.org/doc/stable/reference/generated/numpy.mean.html)
+**Sources:** [NumPy statistics routines](https://numpy.org/doc/stable/reference/routines.statistics.html), [Mathematical functions](https://numpy.org/doc/stable/reference/routines.math.html), [numpy.mean](https://numpy.org/doc/stable/reference/generated/numpy.mean.html)

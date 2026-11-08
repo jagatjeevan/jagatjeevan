@@ -62,6 +62,8 @@ This example removes any row containing a missing value; real analyses may need 
 
 Try a different missing-value policy, compare `np.nanmean` with filtering, or save the standardized data with `np.savetxt`. For every step, state the expected input shape and output shape before running the code.
 
+For a quick performance check in a Jupyter notebook or IPython shell, `%timeit expression` measures one expression and `%%timeit` measures the code in a notebook cell. These are IPython magics, not Python syntax for ordinary `.py` files. Benchmark equivalent work on representative input sizes, and verify that the results are correct before comparing timings.
+
 **Exercise:** Add a feature to the sample data, mark one additional value as missing, and update the code to report the number of complete observations and the mean of each feature using your chosen policy.
 
-**Sources:** [NumPy: The absolute basics for beginners](https://numpy.org/doc/stable/user/absolute_beginners.html), [Indexing on ndarrays](https://numpy.org/doc/stable/user/basics.indexing.html), [Broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html), [NumPy statistics routines](https://numpy.org/doc/stable/reference/routines.statistics.html)
+**Sources:** [NumPy: The absolute basics for beginners](https://numpy.org/doc/stable/user/absolute_beginners.html), [Indexing on ndarrays](https://numpy.org/doc/stable/user/basics.indexing.html), [Broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html), [NumPy statistics routines](https://numpy.org/doc/stable/reference/routines.statistics.html), [IPython `%timeit` magic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit)

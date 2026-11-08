@@ -62,6 +62,25 @@ subset[0] = -1
 print(large[0])  # still 0
 ```
 
+## Fancy indexing and sorting
+
+Integer-array indexing selects arbitrary positions. When row and column index arrays are paired, NumPy selects matching coordinate pairs; use `np.ix_` when you want every combination of selected rows and columns:
+
+```python
+grid = np.arange(20).reshape(4, 5)
+print(grid[[0, 2], [1, 4]])  # [ 1 14]: (row 0, col 1) and (row 2, col 4)
+print(grid[np.ix_([0, 2], [1, 4])])
+# [[ 1  4]
+#  [11 14]]
+```
+
+Sorting quick reference:
+
+- `np.sort(arr, axis=1)`: sort each row; use `axis=0` to sort each column.
+- `np.sort(arr, axis=None)`: sort the flattened values.
+- `arr.sort(axis=...)`: sort the array in place; `np.sort` instead returns a sorted copy.
+- `np.argmin(arr)` / `np.argmax(arr)`: return the flattened index of the minimum / maximum by default; pass `axis` for an index per slice.
+
 **Exercise:** Select all rows from a table whose second column is at least 50. Change one value in a slice and observe whether the original changes; then repeat with `.copy()`.
 
-**Sources:** [Indexing on ndarrays](https://numpy.org/doc/stable/user/basics.indexing.html), [Copies and views](https://numpy.org/doc/stable/user/basics.copies.html)
+**Sources:** [Indexing on ndarrays](https://numpy.org/doc/stable/user/basics.indexing.html), [Copies and views](https://numpy.org/doc/stable/user/basics.copies.html), [Sorting, searching, and counting](https://numpy.org/doc/stable/reference/routines.sort.html)
