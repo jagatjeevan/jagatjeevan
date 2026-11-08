@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Footer from '../../../src/components/Footer';
@@ -13,6 +14,7 @@ import {
 import styles from '../../../styles/courses.module.scss';
 
 function CourseChapter({ course, chapters, chapter }) {
+  const [sidebarExpanded, setSidebarExpanded] = useState(true);
   const chapterIndex = chapters.findIndex((item) => item.slug === chapter.slug);
   const previousChapter = chapters[chapterIndex - 1];
   const nextChapter = chapters[chapterIndex + 1];
@@ -51,18 +53,49 @@ function CourseChapter({ course, chapters, chapter }) {
             {chapter.description && <p className={styles.lead}>{chapter.description}</p>}
           </header>
 
-          <div className={styles.chapterLayout}>
-            <aside className={styles.chapterSidebar} aria-label="Course chapters">
-              <h2>Course index</h2>
-              <ol>
+          <div
+            className={`${styles.chapterLayout} ${
+              sidebarExpanded ? '' : styles.chapterLayoutCollapsed
+            }`}
+          >
+            <aside
+              className={`${styles.chapterSidebar} ${
+                sidebarExpanded ? '' : styles.chapterSidebarCollapsed
+              }`}
+              aria-label="Course chapters"
+            >
+              <div className={styles.chapterSidebarHeader}>
+                <h2 hidden={!sidebarExpanded}>Course index</h2>
+                <button
+                  type="button"
+                  aria-expanded={sidebarExpanded}
+                  aria-controls="course-chapter-list"
+                  aria-label={sidebarExpanded ? 'Collapse chapter list' : 'Expand chapter list'}
+                  title={sidebarExpanded ? 'Collapse chapter list' : 'Expand chapter list'}
+                  onClick={() => setSidebarExpanded((expanded) => !expanded)}
+                >
+                  <i
+                    className={`fa-solid ${
+                      sidebarExpanded ? 'fa-chevron-left' : 'fa-chevron-right'
+                    }`}
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+              <ol id="course-chapter-list">
                 {chapters.map((item) => (
                   <li key={item.slug}>
                     <Link
                       href={`/courses/${course.slug}/${item.slug}`}
                       aria-current={item.slug === chapter.slug ? 'page' : undefined}
                       className={item.slug === chapter.slug ? styles.currentChapter : undefined}
+                      aria-label={`${item.order}. ${item.title}`}
+                      data-title={item.title}
                     >
-                      {item.order}. {item.title}
+                      <span className={styles.chapterSidebarNumber} aria-hidden="true">
+                        {item.order}
+                      </span>
+                      <span hidden={!sidebarExpanded}>{item.title}</span>
                     </Link>
                   </li>
                 ))}

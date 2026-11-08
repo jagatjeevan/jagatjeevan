@@ -183,7 +183,7 @@ code {
   }
 }
 
-.app-container li {
+.app-container ul > li {
   list-style-type: square;
   margin-bottom: 8px;
   padding-left: calc(var(--app-spacer) / 5);

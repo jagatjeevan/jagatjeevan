@@ -3,8 +3,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--app-spacer);
-  min-height: 76px;
-  padding: 16px 0;
+  padding: calc(var(--app-spacer) * 0.8) 0;
   border-top: 1px solid var(--border-color);
   color: var(--muted-text-color);
   font-size: 0.85rem;

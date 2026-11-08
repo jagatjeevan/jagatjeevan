@@ -192,7 +192,12 @@
   align-items: start;
   display: grid;
   gap: var(--app-spacer);
-  grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  transition: grid-template-columns 280ms ease;
+}
+
+.chapterLayoutCollapsed {
+  grid-template-columns: minmax(0, 72px) minmax(0, 1fr);
 }
 
 .chapterLinks {
@@ -213,27 +218,145 @@
 }
 
 .chapterSidebar {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 32px);
   position: sticky;
-  top: 16px;
-
-  h2 {
-    font-size: 1.1rem;
-    margin: 0 0 10px;
-  }
+  top: 90px;
 
   ol {
+    list-style-type: decimal;
     margin: 0;
+    min-height: 0;
+    overflow-y: auto;
     padding-left: 20px;
   }
 
-  li {
+  > ol > li {
+    list-style-type: decimal;
     margin: 8px 0;
-    padding-left: 0;
+    padding-left: 6px;
+  }
+
+  > ol > li + li {
+    margin-top: 0;
   }
 
   a {
     color: inherit;
     font-size: 0.9rem;
+  }
+}
+
+.chapterSidebarCollapsed {
+  overflow: visible;
+  padding: 10px;
+
+  .chapterSidebarHeader {
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  ol {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    list-style: none;
+    overflow: visible;
+    padding: 0;
+  }
+
+  > ol > li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  > ol > li + li {
+    margin-top: 0;
+  }
+
+  a {
+    align-items: center;
+    border-radius: var(--border-radius);
+    display: inline-flex;
+    height: 38px;
+    justify-content: center;
+    position: relative;
+    width: 38px;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--surface-raised-color);
+      text-decoration: none;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      content: attr(data-title);
+      position: absolute;
+      left: calc(100% + 10px);
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap;
+      z-index: 20;
+      background: var(--surface-raised-color);
+      border: var(--perforated-line);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+      color: var(--page-text-color);
+      font-size: 0.85rem;
+      font-weight: normal;
+      padding: 7px 10px;
+      pointer-events: none;
+    }
+  }
+
+  .chapterSidebarNumber {
+    display: inline-flex;
+  }
+}
+
+.chapterSidebarNumber {
+  display: none;
+}
+
+.chapterSidebarHeader {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  h2 {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  button {
+    background: transparent;
+    border: var(--perforated-line);
+    border-radius: var(--border-radius);
+    color: var(--link-color);
+    cursor: pointer;
+    font: inherit;
+    align-items: center;
+    display: inline-flex;
+    font-size: 0.9rem;
+    height: 38px;
+    justify-content: center;
+    padding: 0;
+    width: 38px;
+
+    &:focus-visible {
+      outline: 2px solid var(--link-color);
+      outline-offset: 2px;
+    }
+
+    &:hover {
+      background: var(--surface-raised-color);
+    }
   }
 }
 
@@ -587,14 +710,27 @@
   .twoColumn,
   .chapterLayout {
     grid-template-columns: 1fr;
+    transition: none;
+  }
+
+  .chapterLayoutCollapsed {
+    grid-template-columns: 1fr;
   }
 
   .chapterSidebar {
+    max-height: none;
     position: static;
   }
 
   .chapterSidebar ol {
     columns: 2;
+  }
+
+  .chapterSidebarCollapsed ol {
+    columns: unset;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 }
 
