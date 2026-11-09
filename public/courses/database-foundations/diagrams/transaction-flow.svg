@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" role="img" aria-labelledby="title desc">
+  <title id="title">Transaction commit and rollback flow</title>
+  <desc id="desc">A transaction begins, performs related changes, and checks whether all steps succeeded. Success commits the work; failure rolls it all back.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#475569"/>
+    </marker>
+    <style>
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 2; rx: 12; }
+      .decision { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; }
+      .success { fill: #ecfdf5; stroke: #15803d; stroke-width: 2; rx: 12; }
+      .failure { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; rx: 12; }
+      .label { fill: #0f172a; font: 600 17px system-ui, sans-serif; text-anchor: middle; }
+      .small { fill: #475569; font: 14px system-ui, sans-serif; text-anchor: middle; }
+      .line { fill: none; stroke: #475569; stroke-width: 2.5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="280" rx="20" fill="#fff"/>
+  <path class="line" d="M182 134h52"/>
+  <path class="line" d="M400 134h52"/>
+  <path class="line" d="M552 122h130v-44h48"/>
+  <path class="line" d="M552 146h130v54h48"/>
+  <text class="small" x="623" y="68">all steps succeeded</text>
+  <text class="small" x="623" y="224">a step failed</text>
+  <rect class="box" x="30" y="90" width="152" height="88"/>
+  <text class="label" x="106" y="127">BEGIN</text>
+  <text class="small" x="106" y="151">start transaction</text>
+  <rect class="box" x="234" y="90" width="166" height="88"/>
+  <text class="label" x="317" y="127">Related changes</text>
+  <text class="small" x="317" y="151">order + line items</text>
+  <polygon class="decision" points="500,72 552,134 500,196 448,134"/>
+  <text class="label" x="500" y="130">Success?</text>
+  <text class="small" x="500" y="150">validate work</text>
+  <rect class="success" x="730" y="38" width="144" height="80"/>
+  <text class="label" x="802" y="73">COMMIT</text>
+  <text class="small" x="802" y="96">keep all changes</text>
+  <rect class="failure" x="730" y="162" width="144" height="80"/>
+  <text class="label" x="802" y="197">ROLLBACK</text>
+  <text class="small" x="802" y="220">undo transaction</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 250" role="img" aria-labelledby="title desc">
+  <title id="title">Database Foundations course roadmap</title>
+  <desc id="desc">A left-to-right path from database concepts and relational design, through SQL, transactions and performance, to NoSQL and scaling choices.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 2; rx: 14; }
+      .label { fill: #0f172a; font: 600 18px system-ui, sans-serif; text-anchor: middle; }
+      .sub { fill: #475569; font: 14px system-ui, sans-serif; text-anchor: middle; }
+      .line { fill: none; stroke: #64748b; stroke-width: 2.5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="960" height="250" rx="20" fill="#fff"/>
+  <path class="line" d="M218 124h36"/>
+  <path class="line" d="M450 124h36"/>
+  <path class="line" d="M682 124h36"/>
+  <rect class="box" x="22" y="69" width="196" height="110"/>
+  <text class="label" x="120" y="111">Foundations</text>
+  <text class="sub" x="120" y="139">DBMS · data models</text>
+  <rect class="box" x="254" y="69" width="196" height="110"/>
+  <text class="label" x="352" y="111">Relational design</text>
+  <text class="sub" x="352" y="139">tables · keys · rules</text>
+  <rect class="box" x="486" y="69" width="196" height="110"/>
+  <text class="label" x="584" y="111">SQL in practice</text>
+  <text class="sub" x="584" y="139">CRUD · joins · queries</text>
+  <rect class="box" x="718" y="69" width="220" height="110"/>
+  <text class="label" x="828" y="111">Reliable at scale</text>
+  <text class="sub" x="828" y="139">transactions · tuning · NoSQL</text>
+</svg>

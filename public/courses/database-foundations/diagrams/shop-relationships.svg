@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" role="img" aria-labelledby="title desc">
+  <title id="title">Shop relational schema relationships</title>
+  <desc id="desc">One customer can have many orders. Each order has many order items, and each order item references one product.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#475569"/>
+    </marker>
+    <style>
+      .table { fill: #f8fafc; stroke: #334155; stroke-width: 2; rx: 12; }
+      .head { fill: #e2e8f0; }
+      .name { fill: #0f172a; font: 700 17px system-ui, sans-serif; }
+      .field { fill: #334155; font: 14px system-ui, sans-serif; }
+      .relation { fill: none; stroke: #475569; stroke-width: 2; marker-end: url(#arrow); }
+      .caption { fill: #475569; font: 13px system-ui, sans-serif; }
+    </style>
+  </defs>
+  <rect width="960" height="330" rx="20" fill="#fff"/>
+  <path class="relation" d="M230 132h95"/>
+  <path class="relation" d="M520 144h80"/>
+  <path class="relation" d="M710 214v55h-372v-28"/>
+  <text class="caption" x="264" y="119">1 to many</text>
+  <text class="caption" x="535" y="130">1 to many</text>
+  <text class="caption" x="520" y="288">each item references one product</text>
+
+  <g>
+    <rect class="table" x="30" y="74" width="200" height="116"/>
+    <path class="head" d="M42 74h176a12 12 0 0 1 12 12v28H30V86a12 12 0 0 1 12-12Z"/>
+    <text class="name" x="48" y="102">customers</text>
+    <text class="field" x="48" y="137">PK customer_id</text>
+    <text class="field" x="48" y="163">name · email</text>
+  </g>
+  <g>
+    <rect class="table" x="325" y="74" width="195" height="116"/>
+    <path class="head" d="M337 74h171a12 12 0 0 1 12 12v28H325V86a12 12 0 0 1 12-12Z"/>
+    <text class="name" x="343" y="102">orders</text>
+    <text class="field" x="343" y="137">PK order_id</text>
+    <text class="field" x="343" y="163">FK customer_id</text>
+  </g>
+  <g>
+    <rect class="table" x="600" y="74" width="220" height="140"/>
+    <path class="head" d="M612 74h196a12 12 0 0 1 12 12v28H600V86a12 12 0 0 1 12-12Z"/>
+    <text class="name" x="618" y="102">order_items</text>
+    <text class="field" x="618" y="137">PK, FK order_id</text>
+    <text class="field" x="618" y="163">PK, FK product_id</text>
+    <text class="field" x="618" y="189">quantity · unit_price</text>
+  </g>
+  <g>
+    <rect class="table" x="245" y="214" width="195" height="104"/>
+    <path class="head" d="M257 214h171a12 12 0 0 1 12 12v28H245v-28a12 12 0 0 1 12-12Z"/>
+    <text class="name" x="263" y="242">products</text>
+    <text class="field" x="263" y="277">PK product_id</text>
+    <text class="field" x="263" y="301">name · price</text>
+  </g>
+</svg>

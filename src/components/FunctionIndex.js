@@ -38,15 +38,15 @@ function FunctionIndex({ courseSlug }) {
   const resultCount = categories.reduce((total, category) => total + category.functions.length, 0);
 
   return (
-    <section className={styles.functionIndex} aria-label={`Searchable ${title} function index`}>
+    <section className={styles.functionIndex} aria-label={`Searchable ${title} reference`}>
       <div className={styles.searchPanel}>
-        <label htmlFor={`${courseSlug}-function-search`}>Search this function index</label>
+        <label htmlFor={`${courseSlug}-function-search`}>Search this {title} reference</label>
         <div className={styles.searchInputWrap}>
           <i className="fa-solid fa-magnifying-glass" aria-hidden="true" />
           <input
             id={`${courseSlug}-function-search`}
             type="search"
-            placeholder="Try “reshape”, “random”, or “mean”"
+            placeholder="Try a name, keyword, or task"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
@@ -63,7 +63,7 @@ function FunctionIndex({ courseSlug }) {
       </div>
 
       {categories.length > 0 && (
-        <nav className={styles.categoryNavigation} aria-label="Function categories">
+        <nav className={styles.categoryNavigation} aria-label={`${title} reference categories`}>
           {categories.map((category) => (
             <a key={category.id} href={`#${courseSlug}-functions-${category.id}`}>
               {category.title}
@@ -97,8 +97,8 @@ function FunctionIndex({ courseSlug }) {
         ))
       ) : (
         <div className={styles.emptyState}>
-          <h2>No functions found</h2>
-          <p>Try a shorter name or search for what you want to do, such as “sort” or “random”.</p>
+          <h2>No entries found</h2>
+          <p>Try a shorter name or search for a related concept or task.</p>
           <button type="button" onClick={() => setQuery('')}>
             Clear search
           </button>

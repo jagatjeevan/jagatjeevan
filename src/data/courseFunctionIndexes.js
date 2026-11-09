@@ -1,9 +1,17 @@
 import { filterFunctionCategories, numpyFunctionCategories } from './functionIndex';
+import databaseFunctionCategories from './databaseFunctionIndex';
 import pandasFunctionCategories from './pandasFunctionIndex';
 import pythonFunctionCategories from './pythonFunctionIndex';
 import reactFunctionCategories from './reactFunctionIndex';
 
 const catalogs = {
+  'database-foundations': {
+    title: 'SQL',
+    examplePrefix: '',
+    documentationLabel: 'PostgreSQL documentation',
+    documentationUrl: 'https://www.postgresql.org/docs/current/',
+    categories: databaseFunctionCategories,
+  },
   'numpy-for-data-science': {
     title: 'NumPy',
     examplePrefix: 'import numpy as np\n',
