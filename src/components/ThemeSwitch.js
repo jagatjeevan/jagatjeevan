@@ -24,9 +24,9 @@ function ThemeSwitch(props) {
 
   const getThemeIcon = () =>
     themeState.currentTheme === 'dark-theme' ? (
-      <i className="fa-solid fa-moon"></i>
+      <i className="fa-solid fa-moon" aria-hidden="true" />
     ) : (
-      <i className="fa-solid fa-sun"></i>
+      <i className="fa-solid fa-sun" aria-hidden="true" />
     );
 
   const getHandleKlass = () =>
